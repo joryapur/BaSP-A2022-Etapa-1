@@ -7,5 +7,13 @@ We made the prototype of the landing page in figma.
 
 ## Week 02
 Now I am laying out the structure of the page with html
+
+![Imagen Landing Desktop](https://i.ibb.co/tCzhd4W/Landing-Desktop-Side-Bar.png)
+
+
+
+
+
+
 ## Authors
 Jorgelina Yapur
