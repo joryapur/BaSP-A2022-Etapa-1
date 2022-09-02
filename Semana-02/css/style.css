@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #373867;
+  height: 100%;
+  color: white;
+}
+
+header,
+main,
+footer {
+  margin-left: 30%;
+  right: 10.8%;
+  width: 71.9%;
+}
+
+aside {
+  background-color: #262862;
+  margin-top: 0;
+  float: left;
+  width: 28%;
+  height: 3895px;
+  /* position: fixed; */
+  position: absolute;
+  top: 0%;
+}
+
+.container-search {
+  position: absolute;
+  width: 100%;
+  height: 159px;
+  left: 0px;
+  top: 0px;
+  background-color: #373867;
+}
+
+.container-search > input {
+  margin: 64px 7.76% 35px 10.35%;
+  width: 81%;
+  height: 60px;
+  background-color: #262862;
+  border: 1px solid #49a37b;
+  color: white;
+  text-align: center;
+}
+
+.container-search > input::placeholder {
+  opacity: 0.5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.container-search button {
+  position: absolute;
+  left: 57px;
+  top: 52%;
+  bottom: 35.84%;
+  border-style: none;
+  background: none;
+}
+
+.sidebar-links ul,
+.sidebar-links li {
+  width: 100%;
+}
+
+.sidebar-links ul li a {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 68px;
+  border-bottom: 1px solid #49a37b;
+  width: 100%;
+  display: block;
+  padding-bottom: 8px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.sidebar-links,
+.sidebar-contact {
+  width: 83%;
+  position: relative;
+  top: 246px;
+  text-align: left;
+  margin-left: 12.23%;
+  margin-right: 4.47%;
+}
+
+.sidebar-contact > h3 {
+  font-size: 20px;
+  font-weight: 400;
+  border-bottom: 4px solid #49a37b;
+  margin-bottom: 34px;
+  padding-bottom: 8px;
+}
+
+.sidebar-contact > p {
+  padding: 200 px;
+  font-size: 12px;
+  font-weight: 12px;
+  line-height: 14px;
+  margin-bottom: 40px;
+}
+
+address {
+  width: 100%;
+  position: relative;
+  top: -10px;
+}
+
+address > div {
+  width: 100%;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #49a37b;
+  padding-bottom: 36px;
+  padding-top: 29px;
+  font-size: 14px;
+}
+
+address div img {
+  margin-right: 20px;
+}
+
+.icon-adress {
+  width: 21px;
+  height: 21px;
+}
+
+address div:nth-child(3) {
+  border: none;
+}
+
+address div a {
+  text-decoration: none;
+  color: white;
+}
