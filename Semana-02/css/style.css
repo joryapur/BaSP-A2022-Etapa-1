@@ -5,17 +5,19 @@ body {
   background-color: #373867;
   font-family: "Roboto", sans-serif;
   color: white;
+  overflow-x: hidden;
 }
 
 main {
-  float: right;
+  position: relative;
   width: 72%;
   height: 100%;
+  left: 29%;
 }
 
 aside {
   position: fixed;
-  float: left;
+  /* float: left; */
   width: 28%;
   min-width: 252px;
   height: 100vh;
@@ -185,13 +187,14 @@ h1 {
 }
 
 .container-first {
-  display: inline-block;
   width: 86%;
   padding-top: 40px;
-  margin-left: 5%;
-  margin-right: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
   padding-bottom: 50px;
-  border-bottom: 4px solid #49a37b;
+  /* border-bottom: 4px solid #49a37b; */
+  /* background-color: #f13312; */
+  overflow: visible;
 }
 
 .container-first > h2 {
@@ -206,11 +209,11 @@ h1 {
   line-height: 60px;
 }
 .container-first > p {
-  width: 45%;
+  width: 49%;
   min-width: 350px;
   margin-bottom: 30px;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 19px;
   line-height: 23px;
   text-align: justify;
 }
@@ -218,10 +221,8 @@ h1 {
 .container-first > img {
   display: inline-block;
   float: right;
-  width: 44.59%;
+  width: 46%;
   min-width: 350px;
-  margin-left: 40px;
-  padding-left: 40px;
 }
 
 .container-first > a {
@@ -237,6 +238,11 @@ h1 {
   text-transform: uppercase;
   text-decoration: none;
   color: white;
+  transition: background-color 0.3s ease;
+}
+
+.container-first a:hover {
+  background-color: #49a37abb;
 }
 
 .container-functions {
@@ -246,22 +252,32 @@ h1 {
   margin-left: 5%;
   margin-right: 5%;
   border-bottom: 4px solid #49a37b;
+  border-top: 4px solid #49a37b;
 }
 .container-functions div {
   display: inline-block;
-  width: 45%;
-  margin-bottom: 20px;
-  padding-bottom: 7%;
+  width: 44%;
+  margin-bottom: 50px;
+  padding: 5px;
   overflow: visible;
+  transition: all 0.2s;
+  border-radius: 10px;
 }
 
+.container-functions div:hover {
+  /* background-color: #262862; */
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
+  background: linear-gradient(#262862, #0d0e35);
+}
 .left {
-  margin-right: 70px;
+  margin-right: 40px;
 }
 .container-functions img {
   float: left;
   margin-left: 10px;
   margin-right: 20px;
+  /* margin-top: 10px; */
 }
 .container-functions h2 {
   width: fit-content;
@@ -275,7 +291,7 @@ h1 {
 
 .container-functions p {
   width: 100%;
-  margin-left: 40px;
+  /* margin-left: 40px; */
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
@@ -321,6 +337,15 @@ h1 {
   border-radius: 17px;
   background-color: #ffffff;
   color: #373867;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
+  background: linear-gradient(#49a37b, #306e51);
+  color: white;
 }
 
 .cards {
