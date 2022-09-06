@@ -24,6 +24,8 @@ aside {
   background-color: #262862;
 }
 
+/* Aside */
+
 .container-search {
   position: relative;
   width: 100%;
@@ -110,6 +112,11 @@ aside {
   transition: color 0.2s linear 0.1s;
 }
 
+.sidebar-links ul li a:hover,
+address div a:hover {
+  color: #49a37b;
+}
+
 .sidebar-contact > h3 {
   border-bottom: 4px solid #49a37b;
   padding-bottom: 8px;
@@ -157,17 +164,25 @@ address div a {
   transition: color 0.2s linear 0.1s;
 }
 
-.sidebar-links ul li a:hover,
-address div a:hover {
-  color: #49a37b;
+/* Main */
+
+.banner,
+.container-first,
+.container-functions,
+.container-cards,
+.container-form,
+.container-about,
+.container-links {
+  width: 88%;
+  padding-top: 40px;
+  padding-bottom: 10vh;
+  margin-left: 4%;
+  margin-right: 5%;
+  border-bottom: 4px solid #49a37b;
 }
 
 .banner {
-  width: 86%;
-  margin-top: 0;
-  margin-left: 5%;
-  margin-right: 5%;
-  border-bottom: 4px solid #49a37b;
+  padding-bottom: 0;
 }
 
 h1 {
@@ -186,18 +201,20 @@ h1 {
   padding: 5px;
 }
 
-.container-first {
-  width: 86%;
-  padding-top: 40px;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-bottom: 50px;
-  /* border-bottom: 4px solid #49a37b; */
-  /* background-color: #f13312; */
-  overflow: visible;
+.container-functions h2,
+.container-cards h2,
+.container-form h2,
+.container-about h2 {
+  width: fit-content;
+  padding-bottom: 5px;
+  margin-bottom: 10vh;
+  border-bottom: 4px solid #49a37b;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 35px;
 }
 
-.container-first > h2 {
+.container-first h2 {
   font-weight: 700;
   font-size: 30px;
   line-height: 60px;
@@ -245,15 +262,6 @@ h1 {
   background-color: #49a37abb;
 }
 
-.container-functions {
-  width: 86%;
-  padding-top: 40px;
-  padding-bottom: 50px;
-  margin-left: 5%;
-  margin-right: 5%;
-  border-bottom: 4px solid #49a37b;
-  border-top: 4px solid #49a37b;
-}
 .container-functions div {
   display: inline-block;
   width: 44%;
@@ -265,7 +273,6 @@ h1 {
 }
 
 .container-functions div:hover {
-  /* background-color: #262862; */
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
   transform: scale(1.01);
   background: linear-gradient(#262862, #0d0e35);
@@ -277,28 +284,16 @@ h1 {
   float: left;
   margin-left: 10px;
   margin-right: 20px;
-  /* margin-top: 10px; */
-}
-.container-functions h2 {
-  width: fit-content;
-  padding-bottom: 5px;
-  margin-bottom: 7%;
-  border-bottom: 4px solid #49a37b;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 35px;
 }
 
 .container-functions p {
   width: 100%;
-  /* margin-left: 40px; */
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
 }
 
 .container-functions h3 {
-  display: inline-block;
   padding-bottom: 5px;
   font-weight: 400;
   font-size: 20px;
@@ -306,33 +301,16 @@ h1 {
 }
 
 .container-cards {
-  width: 100%;
-  padding-top: 40px;
-  padding-bottom: 10vh;
-  margin-left: 5%;
-  margin-right: 5%;
-  /* border-bottom: 4px solid #49a37b; */
-  overflow: visible;
-}
-
-.container-cards h2 {
-  width: fit-content;
-  padding-bottom: 5px;
-  margin-bottom: 10vh;
-  border-bottom: 4px solid #49a37b;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 35px;
+  position: relative;
 }
 
 .card {
   position: relative;
   display: inline-block;
-  width: 15%;
-  min-width: 209px;
+  width: 11%;
+  min-width: 205px;
   height: auto;
   padding: 10px 0px;
-  margin-right: 4px;
   margin-bottom: 15px;
   border-radius: 17px;
   background-color: #ffffff;
@@ -349,19 +327,19 @@ h1 {
 }
 
 .cards {
-  display: inline-block;
   width: 100%;
 }
 
 .card img {
   position: absolute;
-  width: 27.44px;
+  width: 27px;
   height: auto;
-  right: 10px;
+  right: 8px;
   top: 8px;
 }
 
 .card h3 {
+  width: fit-content;
   margin-bottom: 30px;
   margin-left: 5px;
   font-weight: 700;
@@ -380,23 +358,6 @@ h1 {
 
 .container-form {
   position: relative;
-  width: 86%;
-  padding-top: 40px;
-  padding-bottom: 80px;
-  margin-left: 5%;
-  margin-right: 5%;
-  border-bottom: 4px solid #49a37b;
-  border-top: 4px solid #49a37b;
-}
-
-.container-form h2 {
-  width: fit-content;
-  padding-bottom: 5px;
-  margin-bottom: 7%;
-  border-bottom: 4px solid #49a37b;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 35px;
 }
 
 .container-form label {
@@ -426,6 +387,10 @@ form > textarea {
   width: 99%;
 }
 
+form option {
+  color: #0d0e35;
+}
+
 .input-small {
   width: 45%;
 }
@@ -444,6 +409,11 @@ form > input:nth-of-type(2) {
   border: 0;
   border-radius: 5px;
   color: white;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #49a37abb;
 }
 
 .btn-reset {
@@ -453,26 +423,14 @@ form > input:nth-of-type(2) {
   border-radius: 5px;
   border: 0;
   color: white;
+  transition: background-color 0.3s ease;
 }
 
+.btn-reset:hover {
+  background-color: #c74b35;
+}
 .container-about {
   display: inline-block;
-  width: 86%;
-  padding-top: 40px;
-  padding-bottom: 70px;
-  margin-left: 5%;
-  margin-right: 5%;
-  border-bottom: 4px solid #49a37b;
-}
-
-.container-about h2 {
-  width: fit-content;
-  padding-bottom: 5px;
-  margin-bottom: 7%;
-  border-bottom: 4px solid #49a37b;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 35px;
 }
 
 .container-about h3 {
@@ -524,8 +482,6 @@ form > input:nth-of-type(2) {
 }
 
 .middle {
-  display: inline-block;
-  width: %;
   float: left;
 }
 
@@ -533,17 +489,6 @@ form > input:nth-of-type(2) {
   float: left;
   width: 100%;
   margin-top: 50px;
-}
-
-.container-links {
-  display: inline-block;
-  position: relative;
-  width: 86%;
-  padding-top: 40px;
-  margin-left: 5%;
-  margin-right: 5%;
-  padding-bottom: 70px;
-  border-bottom: 4px solid #49a37b;
 }
 
 .container-links h2 {
@@ -561,6 +506,16 @@ form > input:nth-of-type(2) {
   margin-left: 30px;
   margin-right: 30px;
 }
+
+.display-inline a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s linear 0.1s;
+}
+
+.display-inline a:hover {
+  color: #49a37b;
+}
 .container-links li {
   list-style: decimal;
   font-weight: 400;
@@ -577,6 +532,11 @@ form > input:nth-of-type(2) {
 .footer img {
   margin-left: 10px;
   margin-right: 10px;
+  transition: all 0.2s;
+}
+
+.footer img:hover {
+  transform: scale(1.2);
 }
 
 .footer div {
