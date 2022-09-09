@@ -9,7 +9,10 @@ We made the prototype of the landing page in figma.
 I made the structure of the page with html
 
 ## Week 03
-Now I am styling it with css
+I added styles with CSS to the desktop page.
+
+## Week 04
+Now I am modifying the page to be responsive.
 
 ![Imagen Landing Desktop](https://i.ibb.co/tCzhd4W/Landing-Desktop-Side-Bar.png)
 
