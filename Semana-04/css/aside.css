@@ -4,6 +4,156 @@ aside {
 
 @media (min-width: 1024px) {
   aside {
-    display: contents;
+    display: block;
+    position: fixed;
+    width: 28%;
+    min-width: 252px;
+    height: 100vh;
+    background-color: #262862;
+  }
+  .container-search {
+    position: relative;
+    width: 100%;
+    height: 10vh;
+    min-height: 80px;
+    background-color: #373867;
+  }
+
+  .container-search > input {
+    position: absolute;
+    top: 40%;
+    right: 7.76%;
+    bottom: 22%;
+    left: 10.35%;
+    width: 81%;
+    height: 37%;
+    min-height: 38px;
+    background-color: #262862;
+    border: 1px solid #49a37b;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+  }
+
+  .container-search > input::placeholder {
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.9;
+  }
+
+  .container-search button img {
+    border-radius: 50%;
+  }
+
+  .container-search button {
+    position: absolute;
+    left: 15%;
+    right: 16.67%;
+    top: 48%;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border-style: none;
+    border-radius: 50%;
+  }
+
+  .container-search button img:hover {
+    background-color: #49a37b;
+    border-radius: 50%;
+    transition: 0.9s ease-in;
+  }
+
+  .sidebar-links {
+    width: 80%;
+    height: 10vh;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 4vh;
+  }
+
+  .sidebar-contact {
+    width: 80%;
+    height: 35vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 19vh;
+  }
+
+  .sidebar-links ul,
+  .sidebar-links li {
+    width: 100%;
+  }
+
+  .sidebar-links ul li a {
+    display: block;
+    width: 100%;
+    margin-bottom: 5vh;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #49a37b;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+    transition: color 0.2s linear 0.1s;
+  }
+
+  .sidebar-links ul li a:hover,
+  address div a:hover {
+    color: #49a37b;
+  }
+
+  .sidebar-contact > h3 {
+    border-bottom: 4px solid #49a37b;
+    padding-bottom: 8px;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .sidebar-contact > p {
+    margin-bottom: 1vh;
+    padding-top: 2vh;
+    font-size: 12px;
+    font-weight: 12px;
+    line-height: 14px;
+  }
+
+  address {
+    width: 100%;
+    height: 10vh;
+  }
+
+  address > div {
+    width: 100%;
+    padding-bottom: 3.5vh;
+    padding-top: 29px;
+    border-bottom: 1px solid #49a37b;
+    font-size: 14px;
+  }
+
+  address div img {
+    margin-right: 20px;
+  }
+
+  .icon-adress {
+    width: 21px;
+    height: 21px;
+  }
+
+  address div:nth-child(3) {
+    border: none;
+  }
+
+  address div a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.2s linear 0.1s;
+  }
+
+  main,
+  header,
+  footer {
+    position: relative;
+    width: 72%;
+    left: 29%;
   }
 }

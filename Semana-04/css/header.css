@@ -1,37 +1,38 @@
-header button {
+.btn-header {
   background: none;
   border: none;
 }
 
-h1 {
+.header h1 {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
   font-size: 2.5rem;
   line-height: 47px;
-  padding-top: 15px;
+  padding-top: 2rem;
+  padding-bottom: 0.2rem;
   margin-right: 10px;
 }
 
-header {
+.header {
   padding-bottom: 5px;
   display: flex;
   padding-top: 0;
 }
 
-header div {
+.header div {
   margin-left: 30px;
   display: flex;
   flex-direction: column;
 }
-header h2 {
+.header h2 {
   font-size: 0.8rem;
   padding-bottom: 8px;
   align-self: flex-end;
 }
 
 @media (min-width: 480px) {
-  header div {
+  .header div {
     flex-direction: row;
   }
 }

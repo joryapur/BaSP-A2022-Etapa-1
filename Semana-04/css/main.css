@@ -1,27 +1,33 @@
-.container-first img {
-  width: 100%;
-  max-width: 400px;
-  margin-left: 15px;
-  margin-bottom: 30px;
+.container-first {
+  display: flex;
+  flex-direction: column;
 }
 
-.container-first h2 {
+.container-first img {
+  min-width: 325px;
+  max-width: 325px;
+  margin-bottom: 30px;
+  min-height: 279px;
+}
+
+.container-first div h2 {
   font-size: 1.9rem;
   margin-bottom: 0.8em;
 }
 
-.container-first h3 {
+.container-first div h3 {
   font-size: 1.3rem;
   margin-bottom: 0.8em;
 }
 
-.container-first p {
+.container-first div p {
   font-size: 0.8rem;
   padding-bottom: 2.5em;
-  text-align: justify;
+  /* text-align: justify;
+  width: 100%; */
 }
 
-.container-first > a {
+.container-first div a {
   width: 156px;
   height: 46px;
   padding: 14px 36px;
@@ -89,13 +95,15 @@
   height: auto;
   right: 15px;
   top: 15px;
+  margin-bottom: 10px;
 }
 
 .card h3 {
   width: fit-content;
-  margin-top: 18px;
+  margin-top: 25px;
   margin-bottom: 15px;
-  margin-left: 30px;
+  margin-left: 25px;
+  padding-top: 10px;
   font-weight: 700;
   font-size: 17px;
   text-align: left;
@@ -103,12 +111,16 @@
 
 .card p {
   width: 80%;
-  padding-left: 30px;
+  padding-left: 25px;
   padding-bottom: 20px;
   margin-top: 0px;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 0.8rem;
   line-height: 14px;
+}
+
+form {
+  position: relative;
 }
 
 form > input,
@@ -122,13 +134,23 @@ form > textarea {
   background: none;
   color: white;
 }
+form > input,
+form > select {
+  height: 37px;
+}
 
 form > select {
-  width: 103%;
+  width: 100%;
 }
 
 form option {
   color: #0d0e35;
+}
+
+.container-form label {
+  display: block;
+  margin-top: 10px;
+  padding-bottom: 5px;
 }
 
 .btn-submit {
@@ -238,16 +260,109 @@ form option {
   line-height: 14px;
 }
 
-@media (min-width: 1024px) {
-  #img-right {
-    display: block;
-  }
+.container-functions-divs div {
+  display: inline-block;
+  /* width: 44%; */
+  margin-bottom: 50px;
+  padding: 5px;
+  transition: all 0.2s;
+  border-radius: 10px;
 }
 
 @media (min-width: 480px) {
+  html {
+    font-size: 17px;
+  }
+
+  .container-first p {
+    line-height: 20px;
+  }
+
   .center {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .card {
+    width: 45%;
+  }
+
+  .input-small {
+    width: 45%;
+  }
+
+  form > input:nth-of-type(2) {
+    position: absolute;
+    right: 0;
+    min-width: 100px;
+  }
+
+  .container-functions div {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 50px;
+    padding: 5px;
+    overflow: visible;
+    transition: all 0.2s;
+    border-radius: 10px;
+  }
+
+  .container-functions img {
+    float: left;
+    margin-left: 10px;
+    margin-right: 20px;
+  }
+
+  .container-functions p {
+    width: 100%;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .container-functions h3 {
+    padding-bottom: 5px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 20px;
+  }
+
+  .container-first {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .container-first div {
+    width: 48%;
+  }
+
+  #img-right {
+    display: block;
+  }
+
+  .container-first img {
+    max-width: 400px;
+    align-self: flex-start;
+  }
+
+  .container-first div {
+    min-width: 200px;
+  }
+
+  .container-functions div {
+    width: 44%;
   }
 }

@@ -8,7 +8,7 @@ body {
   color: white;
 }
 
-header,
+.header,
 .container-first,
 .container-functions,
 .container-cards,
@@ -16,7 +16,7 @@ header,
 .container-about,
 .container-links,
 footer {
-  width: 88%;
+  width: 90%;
   padding-top: 40px;
   padding-bottom: 6vh;
   margin-left: 4%;
@@ -27,6 +27,6 @@ footer {
 
 @media (min-width: 1024px) {
   html {
-    font-size: 30px;
+    font-size: 18px;
   }
 }
