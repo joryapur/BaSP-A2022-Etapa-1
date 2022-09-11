@@ -134,6 +134,7 @@ form > textarea {
   background: none;
   color: white;
 }
+
 form > input,
 form > select {
   height: 37px;
@@ -209,15 +210,20 @@ form option {
   line-height: 14px;
 }
 
-#img-right {
+.container-about-content1,
+.container-about-content2 {
   display: none;
 }
 
-.bottom,
+/* #img-right {
+  display: none;
+} */
+
+/* .bottom,
 .middle,
 .float-right {
   display: none;
-}
+} */
 
 .container-about img {
   width: 168.8px;
@@ -333,11 +339,45 @@ form option {
     font-size: 20px;
     line-height: 23px;
   }
+
+  q {
+    display: none;
+  }
+
+  .quote-tittle {
+    display: none;
+  }
+
+  .container-about-1 {
+    display: none;
+  }
+
+  .container-about-content1,
+  .container-about-content2 {
+    display: flex;
+  }
+
+  #img-right {
+    margin-right: 20px;
+    margin-bottom: 30px;
+  }
+
+  .middle {
+    margin-right: 20px;
+  }
+
+  /* .container-about p {
+    width: 65%;
+  } */
+
+  /* .container-about img {
+    width: 35%;
+  } */
 }
 
 @media (min-width: 1024px) {
   html {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .container-first {
@@ -347,10 +387,6 @@ form option {
 
   .container-first div {
     width: 48%;
-  }
-
-  #img-right {
-    display: block;
   }
 
   .container-first img {
@@ -363,6 +399,16 @@ form option {
   }
 
   .container-functions div {
-    width: 44%;
+    width: 48%;
+  }
+
+  .card {
+    width: 20%;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
