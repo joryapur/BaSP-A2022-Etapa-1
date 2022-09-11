@@ -14,13 +14,12 @@ body {
 .container-cards,
 .container-form,
 .container-about,
-.container-links,
-footer {
-  width: 95%;
+.container-links {
+  width: 90%;
   padding-top: 40px;
   padding-bottom: 6vh;
-  margin-left: 4%;
-  margin-right: 4%;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-bottom: 5vh;
   border-bottom: 4px solid #49a37b;
 }
@@ -28,5 +27,13 @@ footer {
 @media (min-width: 1024px) {
   html {
     font-size: 18px;
+  }
+
+  main,
+  header,
+  footer {
+    position: relative;
+    width: 72%;
+    left: 29%;
   }
 }

@@ -148,12 +148,4 @@ aside {
     color: white;
     transition: color 0.2s linear 0.1s;
   }
-
-  main,
-  header,
-  footer {
-    position: relative;
-    width: 72%;
-    left: 29%;
-  }
 }
