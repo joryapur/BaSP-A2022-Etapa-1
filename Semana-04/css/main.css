@@ -16,14 +16,38 @@
   font-weight: 700;
 }
 
-.container-first div h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.8em;
+.container-functions h2,
+.container-cards h2,
+.container-form h2,
+.container-about h2 {
+  width: fit-content;
+  padding-bottom: 5px;
+  margin-bottom: 4vh;
+  border-bottom: 4px solid #49a37b;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 35px;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+.container-first div h3,
+.container-functions h3,
+.container-about h3 {
+  margin-bottom: 0.7em;
+}
+
+main p {
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 400;
 }
 
 .container-first div p {
-  font-size: 1rem;
   padding-bottom: 2.5em;
+  line-height: 1.3rem;
 }
 
 .container-first div a {
@@ -45,40 +69,27 @@
   background-color: #49a37abb;
 }
 
-
-.container-functions h2,
-.container-cards h2,
-.container-form h2,
-.container-about h2 {
-  width: fit-content;
-  padding-bottom: 5px;
-  margin-bottom: 4vh;
-  border-bottom: 4px solid #49a37b;
-  font-weight: 700;
-  font-size: 1.6rem;
-  line-height: 35px;
-}
-
-.container-functions div {
+.function {
   margin-bottom: 2rem;
+  padding: 0.2rem;
+  border-radius: 10px;
 }
 
-.container-functions img {
+.function img {
   width: 4rem;
   margin-bottom: 10px;
 }
 
-.container-functions h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.7em;
-  font-weight: 400;
-}
-
-.container-functions p {
-  font-size: 0.8rem;
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   width: 100%;
   padding: 10px 0px;
   margin-bottom: 25px;
@@ -89,7 +100,7 @@
   transition: all 0.2s;
 }
 
-.card-1-flex {
+.card-content {
   display: flex;
   justify-content: space-between;
 }
@@ -102,14 +113,12 @@
   align-self: center;
 }
 
-.card-1-flex h3 {
+.card-content h3 {
   padding-left: 15px;
   margin-top: 0.8rem;
   margin-left: 0;
   margin-bottom: 0.3rem;
   font-weight: 700;
-  font-size: 1.2rem;
-  text-align: left;
 }
 
 .card p {
@@ -117,9 +126,6 @@
   padding-left: 15px;
   padding-bottom: 0.8rem;
   margin-top: 0px;
-  font-weight: 400;
-  font-size: 0.8rem;
-  line-height: 14px;
 }
 
 form {
@@ -187,26 +193,18 @@ form option {
 }
 
 .container-about p {
-  font-size: 0.8rem;
-  line-height: 14px;
   margin-bottom: 20px;
 }
 
-.container-about h3 {
-  font-size: 1.3rem;
-  margin-bottom: 20px;
-}
 .container-about-1 {
   display: flex;
   justify-content: space-between;
 }
 
 .container-quote p {
-  font-size: 0.8rem;
   font-style: italic;
-  border-left: 1px solid white;
-  padding-left: 20px;
-  line-height: 14px;
+  border-left: 2px solid white;
+  padding: 10px 0 10px 20px;
 }
 
 .container-about-content1,
@@ -224,24 +222,29 @@ form option {
   display: none;
 }
 
+.container-links-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .container-links h2 {
   margin-left: -10px;
   margin-bottom: 10px;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 1rem;
 }
 
-.display-inline {
-  width: fit-content;
-  margin-bottom: 20px;
-  margin-left: 30px;
-  margin-right: 30px;
+.container-links-list {
+  margin-bottom: 15px;
+  margin-left: 15px;
 }
-
-.display-inline a {
+.container-links-list a {
   color: #ffffff;
   text-decoration: none;
+  font-weight: 400;
+  font-size: 0.7rem;
+  line-height: 1rem;
   transition: color 0.2s linear 0.1s;
 }
 
@@ -250,32 +253,31 @@ form option {
 }
 .container-links li {
   list-style: decimal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-}
-
-.container-functions-divs div {
-  display: inline-block;
-  margin-bottom: 50px;
-  padding: 5px;
-  transition: all 0.2s;
-  border-radius: 10px;
+  font-size: 0.7rem;
 }
 
 @media (min-width: 480px) {
-  .container-first p {
-    line-height: 20px;
-  }
-
-  .cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
   .card {
     width: 45%;
+  }
+
+  .content-functions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    transition: all 0.2s;
+  }
+
+  .function {
+    display: flex;
+    justify-content: center;
+    align-items: self-start;
+  }
+
+  .container-functions img {
+    margin-right: 20px;
+    align-self: flex-start;
   }
 
   .input-small {
@@ -288,40 +290,7 @@ form option {
     min-width: 100px;
   }
 
-  .container-functions div {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 50px;
-    padding: 5px;
-    overflow: visible;
-    transition: all 0.2s;
-    border-radius: 10px;
-  }
-
-  .container-functions img {
-    float: left;
-    margin-left: 10px;
-    margin-right: 20px;
-  }
-
-  .container-functions p {
-    width: 100%;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-  }
-
-  .container-functions h3 {
-    padding-bottom: 5px;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 23px;
-  }
-
-  .container-quote {
-    display: none;
-  }
-
+  .container-quote,
   .container-about-1 {
     display: none;
   }
@@ -329,6 +298,7 @@ form option {
   .container-about-content1,
   .container-about-content2 {
     display: flex;
+    justify-content: space-between;
   }
 
   #img-right {
@@ -340,10 +310,9 @@ form option {
     margin-right: 20px;
   }
 
-  .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .container-links-links {
+    flex-direction: row;
+    margin-left: 0;
   }
 }
 
@@ -355,6 +324,7 @@ form option {
 
   .container-first div {
     width: 48%;
+    min-width: 200px;
   }
 
   .container-first img {
@@ -362,15 +332,15 @@ form option {
     max-width: 400px;
   }
 
-  .container-first div {
-    min-width: 200px;
+  .content-functions {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
-
-  .container-functions div {
+  .function {
     width: 48%;
   }
 
-  .container-functions div:hover {
+  .function:hover {
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
     transform: scale(1.01);
     background: linear-gradient(#262862, #0d0e35);
@@ -411,3 +381,4 @@ form option {
   .about-tittle {
     display: block;
   }
+}
