@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 html {
-  font-size: 16px;
+  font-size: 12px;
 }
 body {
   background-color: #373867;
@@ -16,24 +16,29 @@ body {
 .container-about,
 .container-links {
   width: 90%;
-  padding-top: 40px;
+  padding-top: 3vh;
   padding-bottom: 6vh;
-  margin-left: 5%;
+  margin-left: 4%;
   margin-right: 5%;
   margin-bottom: 5vh;
   border-bottom: 4px solid #49a37b;
 }
 
+@media (min-width: 480px) {
+  html {
+    font-size: 17px;
+  }
+}
 @media (min-width: 1024px) {
   html {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   main,
   header,
   footer {
     position: relative;
-    width: 72%;
-    left: 29%;
+    width: 75%;
+    left: 25%;
   }
 }
