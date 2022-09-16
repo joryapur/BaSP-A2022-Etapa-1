@@ -16,13 +16,17 @@ I added styles with CSS to the desktop page.
 
 ## Week 04
 
-Now I am modifying the page to be responsive.
+I modified the page to be responsive.
+
+## Week 05
+
+Exercises to practice JavaScript.
 
 ## Github-pages
 
-https://joryapur.github.io/BaSP-A2022-Etapa-1/Semana-04/index.html
+**Landing page** https://joryapur.github.io/BaSP-A2022-Etapa-1/Semana-04/index.html
 
-![Imagen Landing Desktop](https://i.ibb.co/tCzhd4W/Landing-Desktop-Side-Bar.png)
+**Js exercises:** https://joryapur.github.io/BaSP-A2022-Etapa-1/Semana-05/index.html
 
 ## Authors
 
