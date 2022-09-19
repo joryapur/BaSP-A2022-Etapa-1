@@ -7,10 +7,10 @@ console.log("---EXERCISE 5 : FOR---");
 console.log("-EXERCISE 5.a-");
 
 var animals = ["cat", "dog", "parrot", "fox", "lion"];
-// for (var index = 0; index < animals.length; index++) {
-//   var element = animals[index];
-//   alert(element);
-// }
+for (var index = 0; index < animals.length; index++) {
+  var element = animals[index];
+  alert(element);
+}
 
 /*
     b. Al array anterior convertir la primera letra de cada palabra en mayúscula y mostrar una
