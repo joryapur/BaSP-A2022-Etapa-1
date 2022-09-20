@@ -46,7 +46,7 @@ for (var index = 0; index < animals.length; index++) {
   sentence += element + " ";
 }
 
-console.log("Now the string is not empty: " + sentence);
+alert("Now the string is not empty: " + sentence);
 
 /*
     d. Crear una array vacío y con un bucle for de 10 repeticiones. Llenar el array con el número de la repetición,

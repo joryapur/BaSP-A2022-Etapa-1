@@ -40,11 +40,11 @@ console.log("Sum with validation: " + resultVal);
 */
 console.log("-EXERCISE 6.c-");
 
-function validateInteger(num) {
+function numberIsInteger(num) {
   return Number.isInteger(num);
 }
 
-validateInt = validateInteger(8.5);
+validateInt = numberIsInteger(8.5);
 console.log("Is Integer: " + validateInt);
 
 /*
@@ -59,10 +59,10 @@ function sum3(x1, x2) {
   if (typeof x1 !== "number" || typeof x2 !== "number") {
     alert("You must enter a number");
     return NaN;
-  } else if (!validateInteger(x1)) {
+  } else if (!numberIsInteger(x1)) {
     alert("The number must be an integer");
     return Math.round(x1);
-  } else if (!validateInteger(x2)) {
+  } else if (!numberIsInteger(x2)) {
     alert("The number must be an integer");
     return Math.round(x2);
   } else {
@@ -70,7 +70,7 @@ function sum3(x1, x2) {
   }
 }
 
-sumValidate = sum3(2, 6.3);
+sumValidate = sum3("hola", 4);
 console.log(sumValidate);
 
 /*
@@ -81,26 +81,32 @@ console.log(sumValidate);
 */
 console.log("-EXERCISE 6.e-");
 
-function validateSum(n1, n2) {
-  if (typeof n1 !== "number" || typeof n2 !== "number") {
+function numIsInvalid(n) {
+  if (typeof n !== "number") {
     alert("You must enter a number");
     return NaN;
-  } else if (!validateInteger(n1)) {
+  } else if (!numberIsInteger(n)) {
     alert("The number must be an integer");
-    return Math.round(n1);
-  } else if (!validateInteger(n2)) {
-    alert("The number must be an integer");
-    return Math.round(n2);
-  } else {
-    return true;
+    return Math.round(n);
   }
+  return false;
 }
+
+console.log(numIsInvalid(4.5));
+console.log(numIsInvalid("hola"));
 
 function finalSum(n1, n2) {
-  if (validateSum(n1, n2)) {
-    return n1 + n2;
-  } else validateSum(n1, n2);
+  var n1IsInvalid = numIsInvalid(n1);
+  if (n1IsInvalid || Number.isNaN(n1IsInvalid)) {
+    return n1IsInvalid;
+  }
+  var n2IsInvalid = numIsInvalid(n2);
+  if (n2IsInvalid || Number.isNaN(n2IsInvalid)) {
+    return n2IsInvalid;
+  }
+  return n1 + n2;
 }
 
-console.log(finalSum(4, 5));
-console.log(finalSum("hola", 5));
+var result = finalSum("hola", 10);
+
+console.log("Sum with a function: " + result);

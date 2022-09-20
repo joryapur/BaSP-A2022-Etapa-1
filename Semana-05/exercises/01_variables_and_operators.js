@@ -7,9 +7,9 @@ console.log("-EXERCISE 1.a-");
 
 var num1 = 2;
 var num2 = 3;
-var suma = num1 + num2;
+var resultSum = num1 + num2;
 
-console.log("La suma es: " + suma);
+console.log("Sum: " + resultSum);
 
 /*
     b. Crear dos variables de tipo String y concatenarlas guardando el resultado
@@ -17,11 +17,11 @@ console.log("La suma es: " + suma);
 */
 console.log("-EXERCISE 1.b-");
 
-var nombre = "Pepe";
-var apellido = "Gomez";
-var nombreCompleto = nombre + " " + apellido;
+var firstName = "Pepe";
+var lastName = "Gomez";
+var completeName = firstName + " " + lastName;
 
-console.log("Nombre completo: " + nombreCompleto);
+console.log("Name: " + completeName);
 
 /*
     c. Crear dos variables de tipo String y sumar el largo de cada variable
@@ -34,4 +34,4 @@ var color = "Rojo";
 var animal = "Perro";
 var variablesLength = color.length + animal.length;
 
-console.log("Suma de length de variables: " + variablesLength);
+console.log("Length sum: " + variablesLength);

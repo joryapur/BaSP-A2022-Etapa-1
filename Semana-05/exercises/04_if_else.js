@@ -31,19 +31,19 @@ console.log("-EXERCISE 4.b-");
 var age = Math.floor(Math.random() * 101);
 
 if (age <= 2) {
-  alert("Es un bebe y tiene: " + age + " años");
+  alert("Baby-age : " + age + " años");
 } else if (age >= 2 && age <= 12) {
-  alert("Es un niño y tiene: " + age + " años");
+  alert("Child-age : " + age + " años");
 } else if (age >= 13 && age <= 19) {
-  alert("Es un adolescente y tiene: " + age + " años");
+  alert("Teenager-age : " + age + " años");
 } else if (age >= 20 && age <= 30) {
-  alert("Es un joven y tiene: " + age + " años");
+  alert("Young-age : " + age + " años");
 } else if (age >= 31 && age <= 60) {
-  alert("Es un adulto y tiene: " + age + " años");
+  alert("Adult-age : " + age + " años");
 } else if (age >= 61 && age <= 75) {
-  alert("Es un adulto mayor y tiene: " + age + " años");
+  alert("Elderly-age : " + age + " años");
 } else {
-  alert("Es un anciano y tiene: " + age + " años");
+  alert("Anciente-age : " + age + " años");
 }
 
-console.log("La edad es: " + age);
+console.log("Age : " + age);

@@ -6,87 +6,87 @@ console.log("---EXERCISE 3 : ARRAYS---");
 */
 console.log("-EXERCISE 3.a-");
 
-var arrayMeses = [
-  "Enero",
-  "Febrero",
-  "Marzo",
-  "Abril",
-  "Mayo",
-  "Junio",
-  "Julio",
-  "Agosto",
-  "Septiembre",
-  "Octubre",
-  "Noviembre",
-  "Diciembre",
+var arrayMonths = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
 ];
 
-console.log("Mes 5 y 11: " + arrayMeses[4] + " y " + arrayMeses[10]);
+console.log("Month 5 y 11: " + arrayMonths[4] + " and " + arrayMonths[10]);
 
 /*
     b. Ordenar el array de meses alfabéticamente y mostrarlo por consola (utilizar sort).
 */
 console.log("-EXERCISE 3.b-");
 
-var mesesAlfabeticamente = arrayMeses.sort();
+var monthsAlphabetical = arrayMonths.sort();
 
-console.log("Meses ordenados alfabeticamente: " + mesesAlfabeticamente);
+console.log("Months in alphabetical order: " + monthsAlphabetical);
 
 /*
     c. Agregar un elemento al principio y al final del array (utilizar unshift y push).
 */
 console.log("-EXERCISE 3.c-");
 
-arrayMeses.unshift(2022);
-arrayMeses.push(2023);
+arrayMonths.unshift(2022);
+arrayMonths.push(2023);
 
-console.log("Agrego 2 elementos: " + arrayMeses);
+console.log("Add 2 elements: " + arrayMonths);
 
 /*
     d. Quitar un elemento del principio y del final del array (utilizar shift y pop).
 */
 console.log("-EXERCISE 3.d-");
 
-arrayMeses.shift();
-arrayMeses.pop();
-console.log("Quito 2 elementos: " + arrayMeses);
+arrayMonths.shift();
+arrayMonths.pop();
+console.log("Remove two elements: " + arrayMonths);
 
 /*
     e. Invertir el orden del array (utilizar reverse).
 */
 console.log("-EXERCISE 3.e-");
 
-arrayMeses.reverse();
+arrayMonths.reverse();
 
-console.log("Array invertido: " + arrayMeses);
+console.log("Reverse Array : " + arrayMonths);
 
 /*
     f. Unir todos los elementos del array en un único string donde cada mes este separado por un guión - (utilizar join).
 */
 console.log("-EXERCISE 3.f-");
 
-console.log("Elementos del array con join: " + arrayMeses.join("-"));
+console.log("Join array elements: " + arrayMonths.join("-"));
 
 /*
     g. Crear una copia del array de meses que contenga desde Mayo hasta Noviembre (utilizar slice).
 */
 console.log("-EXERCISE 3.g-");
 
-var arrayMeses2 = [
-  "Enero",
-  "Febrero",
-  "Marzo",
-  "Abril",
-  "Mayo",
-  "Junio",
-  "Julio",
-  "Agosto",
-  "Septiembre",
-  "Octubre",
-  "Noviembre",
-  "Diciembre",
+var arrayMonths2 = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
 ];
 
-var arrayMesesSlice = arrayMeses2.slice(4, 11);
+var arrayMonthsSlice = arrayMonths2.slice(4, 11);
 
-console.log("Array con slice: " + arrayMesesSlice);
+console.log("Slice array: " + arrayMonthsSlice);

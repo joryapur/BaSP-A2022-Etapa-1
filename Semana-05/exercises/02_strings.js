@@ -6,21 +6,21 @@ console.log("---EXERCISE 2 : STRINGS---");
 */
 console.log("-EXERCISE 2.a-");
 
-var saludo = "Buenas noches";
+var greeting = "Good Night";
 
-console.log("String a mayúscula: " + saludo.toUpperCase());
+console.log("Uppercase: " + greeting.toUpperCase());
 
 /*
     b. Crear una variable de tipo string con al menos 10 caracteres y generar
-    un nuevo string con los primeros 5 caracteres guardando el resultado en una 
+    un nuevo string con los primeros 5 caracteres guardando el resultado en una
     nueva variable (utilizar substring).
 */
 console.log("-EXERCISE 2.b-");
 
-var animal = "Murciélago";
+var animal = "chimpanzee";
 var firstFiveChar = animal.substring(0, 5);
 
-console.log("Primeros 5 caracteres de Murciélago: " + firstFiveChar);
+console.log("First five characters: " + firstFiveChar);
 
 /*
     c. Crear una variable de tipo string con al menos 10 caracteres y generar un nuevo string
@@ -28,10 +28,10 @@ console.log("Primeros 5 caracteres de Murciélago: " + firstFiveChar);
 */
 console.log("-EXERCISE 2.c-");
 
-var banda = "Babasónicos";
-var threeLastChar = banda.substring(8, 11);
+var band = "Babasónicos";
+var threeLastChar = band.substring(8, 11);
 
-console.log("Últimos 3 caracteres de Babasónicos : " + threeLastChar);
+console.log("Last 3 characters : " + threeLastChar);
 
 /*
     d. Crear una variable de tipo string con al menos 10 caracteres y generar un nuevo string con la
@@ -40,11 +40,11 @@ console.log("Últimos 3 caracteres de Babasónicos : " + threeLastChar);
 */
 console.log("-EXERCISE 2.d-");
 
-var nombre = "eVANGELINA";
-var nombre2 =
-  nombre.substring(0, 1).toUpperCase() + nombre.substring(1, 10).toLowerCase();
+var person = "eVANGELINA";
+var personName =
+  person.substring(0, 1).toUpperCase() + person.substring(1, 10).toLowerCase();
 
-console.log("String con Uppercase y Lowercase: " + nombre2);
+console.log("String con Uppercase y Lowercase: " + personName);
 
 /*
     e. Crear una variable de tipo string con al menos 10 caracteres y algún espacio en blanco. Encontrar la
@@ -55,7 +55,7 @@ console.log("-EXERCISE 2.e-");
 var animal = "Golond rina";
 var whiteSpace = animal.indexOf(" ");
 
-console.log("Index del espacio en blanco: " + whiteSpace);
+console.log("Whitespace index: " + whiteSpace);
 
 /*
     f. Crear una variable de tipo string con al menos 2 palabras largas (10 caracteres y algún espacio entre medio).
@@ -65,12 +65,12 @@ console.log("Index del espacio en blanco: " + whiteSpace);
 */
 console.log("-EXERCISE 2.f-");
 
-var comida = "mIlaNEsas fRItAs";
-var space = comida.indexOf(" ");
-var comidaUpperLower =
-  comida.substring(0, 1).toUpperCase() +
-  comida.substring(1, space).toLowerCase() +
+var food = "mIlaNEsas fRItAs";
+var space = food.indexOf(" ");
+var foodUpperLower =
+  food.substring(0, 1).toUpperCase() +
+  food.substring(1, space).toLowerCase() +
   " " +
-  comida.substring(space + 1, space + 2).toUpperCase() +
-  comida.substring(space + 2, comida.length).toLowerCase();
-console.log(comidaUpperLower);
+  food.substring(space + 1, space + 2).toUpperCase() +
+  food.substring(space + 2, food.length).toLowerCase();
+console.log(foodUpperLower);
