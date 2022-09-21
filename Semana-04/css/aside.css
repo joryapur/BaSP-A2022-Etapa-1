@@ -3,16 +3,23 @@ aside {
 }
 
 @media (min-width: 1024px) {
+  .container-aside {
+    width: 25%;
+  }
   aside {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     position: fixed;
     width: 25%;
-    min-width: 252px;
     height: 100vh;
     background-color: #262862;
   }
   .container-search {
-    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     width: 100%;
     height: 10vh;
     min-height: 80px;
@@ -20,14 +27,9 @@ aside {
   }
 
   .container-search > input {
-    position: absolute;
-    top: 40%;
-    right: 7.76%;
-    bottom: 22%;
-    left: 10.35%;
-    width: 81%;
-    height: 37%;
+    width: 68%;
     min-height: 38px;
+    margin-left: 2.8vh;
     background-color: #262862;
     border: 1px solid #49a37b;
     border-radius: 5px;
@@ -41,47 +43,23 @@ aside {
     opacity: 0.9;
   }
 
-  .container-search button img {
-    border-radius: 50%;
-  }
-
   .container-search button {
-    position: absolute;
-    left: 15%;
-    right: 16.67%;
-    top: 48%;
-    width: 30px;
-    height: 30px;
-    background: none;
     border-style: none;
     border-radius: 50%;
+    opacity: 0.7;
+    transition: 0.5s;
   }
 
-  .container-search button img:hover {
-    background-color: #49a37b;
-    border-radius: 50%;
-    transition: 0.9s ease-in;
+  .container-search button:hover {
+    transform: scale(1.1);
   }
 
   .sidebar-links {
     width: 80%;
-    height: 10vh;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 4vh;
   }
 
   .sidebar-contact {
     width: 80%;
-    height: 35vh;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 19vh;
-  }
-
-  .sidebar-links ul,
-  .sidebar-links li {
-    width: 100%;
   }
 
   .sidebar-links ul li a {
@@ -115,11 +93,6 @@ aside {
     font-size: 0.7rem;
     font-weight: 400;
     line-height: 14px;
-  }
-
-  address {
-    width: 100%;
-    height: 10vh;
   }
 
   address > div {

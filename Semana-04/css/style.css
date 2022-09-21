@@ -3,24 +3,25 @@ html {
   font-size: 12px;
 }
 body {
+  display: flex;
   background-color: #373867;
   font-family: "Roboto", sans-serif;
   color: white;
 }
 
 .header,
-.container-first,
+.container-mainImage,
 .container-functions,
 .container-cards,
 .container-form,
 .container-about,
 .container-links {
   width: 90%;
-  padding-top: 3vh;
-  padding-bottom: 6vh;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   margin-left: 4%;
   margin-right: 5%;
-  margin-bottom: 5vh;
+  margin-bottom: 3rem;
   border-bottom: 4px solid #49a37b;
 }
 
@@ -34,10 +35,7 @@ body {
     font-size: 19px;
   }
 
-  header,
-  main,
-  footer {
+  .main-content {
     width: 75%;
-    margin-left: 25%;
   }
 }

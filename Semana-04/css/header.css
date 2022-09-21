@@ -1,31 +1,31 @@
 .header {
   display: flex;
-  padding-bottom: 5px;
+  padding-bottom: 0.3rem;
   padding-top: 0;
 }
 
 .btn-header {
   background: none;
   border: none;
+  margin-right: 1rem;
 }
 
 .header h1 {
   padding-top: 2rem;
   padding-bottom: 0.2rem;
-  margin-right: 10px;
+  margin-right: 0.9rem;
   font-weight: 700;
   font-size: 2.5rem;
-  line-height: 47px;
+  line-height: 2.5rem;
 }
 
 .header div {
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
 }
 .header h2 {
   align-self: flex-end;
-  padding-bottom: 8px;
+  padding-bottom: 0.4rem;
   font-size: 0.8rem;
 }
 
