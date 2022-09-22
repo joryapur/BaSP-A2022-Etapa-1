@@ -1,0 +1,30 @@
+footer div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+footer img {
+  width: 27px;
+  height: 27px;
+  transition: all 0.2s;
+}
+
+footer img:hover {
+  transform: scale(1.2);
+}
+
+footer h4 {
+  width: fit-content;
+  margin-left: auto;
+  margin-top: 30px;
+  margin-right: auto;
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+}
+
+footer {
+  border: none;
+  padding-bottom: 1.5rem;
+}
