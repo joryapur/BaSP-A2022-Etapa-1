@@ -87,28 +87,30 @@ form button:hover {
   transform: scale(1.03);
 }
 
-input[type="password"],
-input[type="text"] {
+.inputBox {
   width: 100%;
-  background: none;
-  border: none;
+  background: transparent;
+  border: transparent;
 }
 
-input[type="password"]:focus,
-input[type="text"]:focus {
-  background: none;
-  border: 0;
-}
-
-.form-email,
-.form-pass {
+.form-input {
   display: flex;
   border-bottom: 1px solid #373867;
 }
 
-.form-email img,
-.form-pass img {
+.form-input {
   padding-right: 0.5rem;
+}
+
+.redAlert {
+  color: red;
+}
+
+.validValue {
+  border: 1px solid green;
+}
+.invalidValue {
+  border: 1px solid red;
 }
 
 @media (min-width: 750px) {

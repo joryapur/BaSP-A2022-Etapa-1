@@ -7,30 +7,43 @@
     <link rel="stylesheet" href="../styles/reset.css" />
     <link rel="stylesheet" href="../styles/style.css" />
     <link rel="stylesheet" href="../styles/login.css" />
+    <script src="../js/login.js"></script>
     <title>Document</title>
   </head>
   <body>
     <header>
       <h1>Trackgenix</h1>
     </header>
-    <main>
+    <main id="main">
       <a href="../views/index.html" class="link-home">Home</a>
       <div class="container-login">
         <h2>Sign In</h2>
-        <form>
-          <div class="form-email">
+        <form id="form">
+          <div class="form-input">
             <img src="../img/form-email.png" alt="" />
-            <input type="text" placeholder="E-mail" />
+            <input
+              type="text"
+              placeholder="E-mail"
+              class="inputBox"
+              id="email"
+              required
+            />
           </div>
-          <div class="form-pass">
+          <div class="form-input">
             <img src="../img/form-pass.png" alt="" />
-            <input type="password" placeholder="Password" />
+            <input
+              type="password"
+              placeholder="Password"
+              class="inputBox"
+              id="pass"
+              required
+            />
           </div>
           <div class="form-remember">
             <input type="checkbox" name="" id="checkbox" checked />
             <label for="checkbox">Remember me</label>
           </div>
-          <button type="submit">Continue</button>
+          <button type="submit" id="submit">Login</button>
         </form>
         <a href="">Forgot password?</a>
       </div>
