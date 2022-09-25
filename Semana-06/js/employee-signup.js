@@ -5,6 +5,7 @@ window.onload = function () {
   var inputPostalCode = document.getElementById("postalCode");
   var inputEmail = document.getElementById("email");
   var inputPass = document.getElementById("pass");
+  var inputRepeatPass = document.getElementById("repeatPass");
   var submit = document.getElementById("submit");
   var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
   var alertError = document.createElement("h3");
@@ -18,6 +19,15 @@ window.onload = function () {
       }
     }
     return false;
+  }
+
+  function notNumber(val) {
+    val = parseInt(val);
+    if (isNaN(val)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   function upperCaseInString(word) {
@@ -62,16 +72,27 @@ window.onload = function () {
   function validatePostalCode() {
     var postalLength = inputPostalCode.value.length;
     var postalValue = inputPostalCode.value;
-    var postalLengthValid = postalLength == 4 || postalLength == 5;
-    var areNums = containsNums(postalValue);
-    if (!postalLengthValid || areNums == false) {
+    var postalLengthValid = postalLength < 4 || postalLength > 5;
+    var notNums = notNumber(postalValue) == true;
+    if (postalLengthValid || notNums) {
       inputPostalCode.classList.add("invalidValue");
       alertError.innerText = "Incorrect username or password";
       form.appendChild(alertError);
-      return false;
+      return true;
     } else {
       inputPostalCode.classList.add("validValue");
+      return false;
+    }
+  }
+
+  function validateEmail() {
+    if (emailExpression.test(inputEmail.value)) {
+      inputEmail.classList.add("validValue");
       return true;
+    } else {
+      inputEmail.classList.add("invalidValue");
+      alertError.innerText = "Incorrect username or password";
+      form.appendChild(alertError);
     }
   }
 
@@ -91,14 +112,25 @@ window.onload = function () {
     }
   }
 
-  function validateEmail() {
-    if (emailExpression.test(inputEmail.value)) {
-      inputEmail.classList.add("validValue");
-      return true;
+  function validateRepeat() {
+    var passOk = validatePass() == true;
+    var pass1 = inputPass.value;
+    var passRepeat = inputRepeatPass.value;
+    if (passOk) {
+      if (pass1 === passRepeat) {
+        inputRepeatPass.classList.add("validValue");
+        return true;
+      } else {
+        inputRepeatPass.classList.add("invalidValue");
+        alertError.innerText = "Incorrect username or password";
+        form.appendChild(alertError);
+        return false;
+      }
     } else {
-      inputEmail.classList.add("invalidValue");
+      inputRepeatPass.classList.add("invalidValue");
       alertError.innerText = "Incorrect username or password";
       form.appendChild(alertError);
+      return false;
     }
   }
 
@@ -124,5 +156,6 @@ window.onload = function () {
   inputPostalCode.addEventListener("blur", validatePostalCode);
   inputEmail.addEventListener("blur", validateEmail);
   inputPass.addEventListener("blur", validatePass);
+  inputRepeatPass.addEventListener("blur", validateRepeat);
   form.addEventListener("focusin", normalizeInput);
 };
