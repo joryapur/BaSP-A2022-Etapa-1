@@ -2,6 +2,7 @@ window.onload = function () {
   var main = document.getElementById("main");
   var form = document.getElementById("form");
   var inputFirstName = document.getElementById("firstName");
+  var inputPhone = document.getElementById("phone");
   var inputPostalCode = document.getElementById("postalCode");
   var inputEmail = document.getElementById("email");
   var inputPass = document.getElementById("pass");
@@ -21,9 +22,9 @@ window.onload = function () {
     return false;
   }
 
-  function notNumber(val) {
-    val = parseInt(val);
-    if (isNaN(val)) {
+  function isNumber(val) {
+    valOk = val * 3;
+    if (valOk) {
       return true;
     } else {
       return false;
@@ -52,6 +53,16 @@ window.onload = function () {
     }
   }
 
+  function showInvalid(field) {
+    field.classList.add("invalidValue");
+    alertError.innerText = "Incorrect username or password";
+    main.appendChild(alertError);
+  }
+
+  function showValid(field) {
+    field.classList.add("validValue");
+  }
+
   function validateFirstName() {
     var nameLength = inputFirstName.value.length;
     var nameValue = inputFirstName.value;
@@ -69,19 +80,27 @@ window.onload = function () {
     }
   }
 
-  function validatePostalCode() {
-    var postalLength = inputPostalCode.value.length;
-    var postalValue = inputPostalCode.value;
-    var postalLengthValid = postalLength < 4 || postalLength > 5;
-    var notNums = notNumber(postalValue) == true;
-    if (postalLengthValid || notNums) {
-      inputPostalCode.classList.add("invalidValue");
-      alertError.innerText = "Incorrect username or password";
-      form.appendChild(alertError);
-      return true;
+  function validatePhone() {
+    phoneLength = inputPhone.value.length;
+    phoneValue = inputPhone.value;
+    phoneLengthValid = phoneLength === 10;
+    onlyNums = isNumber(phoneValue);
+    if (onlyNums && phoneLengthValid) {
+      showValid(inputPhone);
     } else {
-      inputPostalCode.classList.add("validValue");
-      return false;
+      showInvalid(inputPhone);
+    }
+  }
+
+  function validatePostalCode() {
+    postalLength = inputPostalCode.value.length;
+    postalValue = inputPostalCode.value;
+    postalLengthValid = postalLength === 4 || postalLength === 5;
+    onlyNums = isNumber(postalValue);
+    if (onlyNums && postalLengthValid) {
+      showValid(inputPostalCode);
+    } else {
+      showInvalid(inputPostalCode);
     }
   }
 
@@ -153,6 +172,7 @@ window.onload = function () {
   };
 
   inputFirstName.addEventListener("blur", validateFirstName);
+  inputPhone.addEventListener("blur", validatePhone);
   inputPostalCode.addEventListener("blur", validatePostalCode);
   inputEmail.addEventListener("blur", validateEmail);
   inputPass.addEventListener("blur", validatePass);
