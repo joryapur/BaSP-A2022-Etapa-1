@@ -94,6 +94,29 @@ form button:hover {
   width: 83%;
 }
 
+.link-signIn {
+  font-size: 0.8rem;
+}
+
+a {
+  display: block;
+  padding-top: 1rem;
+  font-size: 0.7rem;
+  text-decoration: none;
+  color: #373867;
+  transition: color 0.2s linear 0.1s;
+}
+
+.redAlert {
+  color: red;
+}
+
+.validValue {
+  border: 1px solid green;
+}
+.invalidValue {
+  border: 1px solid red;
+}
 @media (max-width: 450px) {
   form {
     flex-direction: column;
