@@ -22,11 +22,13 @@ I modified the page to be responsive.
 
 Exercises to practice JavaScript.
 
+## Week 06
+
+I am adding validations to the forms with javaScript
+
 ## Github-pages
 
-**Landing page** https://joryapur.github.io/BaSP-A2022-Etapa-1/Semana-04/index.html
-
-**Js exercises:** https://joryapur.github.io/BaSP-A2022-Etapa-1/Semana-05/index.html
+**Landing page** https://joryapur.github.io/BaSP-A2022-Etapa-1/Semana-06/views/index.html
 
 ## Authors
 
