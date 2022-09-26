@@ -194,6 +194,17 @@ form option {
   background-color: #c74b35;
 }
 
+.redAlert {
+  color: red;
+}
+
+.validValue {
+  border: 1px solid green;
+}
+.invalidValue {
+  border: 1px solid red;
+}
+
 .container-about p {
   margin-bottom: 1.4rem;
 }
