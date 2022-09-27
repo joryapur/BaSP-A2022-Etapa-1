@@ -6,8 +6,9 @@ window.onload = function () {
   var inputmessage = document.getElementById("message");
   var submit = document.getElementById("submit");
   var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-  var alertError = document.createElement("h3");
-  alertError.classList.add("redAlert");
+  var invalidAlert = document.createElement("p");
+  var node = document.createTextNode("");
+  invalidAlert.classList.add("error-msg");
 
   function containsNums(string) {
     var nums = "0123456789";
@@ -19,14 +20,29 @@ window.onload = function () {
     return false;
   }
 
-  function showInvalid(field) {
-    field.classList.add("invalidValue");
-    alertError.innerText = "Incorrect values";
-    form.appendChild(alertError);
+  function isNotLetter(string) {
+    for (var i = 0; i < string.length; i++) {
+      char = string[i];
+      if (char.toUpperCase() == char.toLowerCase()) {
+        return true;
+      }
+    }
   }
 
   function showValid(field) {
     field.classList.add("validValue");
+  }
+
+  function showInvalid(field, msg) {
+    field.classList.add("invalidValue");
+    node.textContent = msg;
+    invalidAlert.appendChild(node);
+    field.insertAdjacentElement("beforebegin", invalidAlert);
+  }
+
+  function normalizeInput(e) {
+    e.target.classList.remove("invalidValue");
+    invalidAlert.remove();
   }
 
   function validateName() {
@@ -34,11 +50,12 @@ window.onload = function () {
     nameValue = inputName.value;
     nameLengthValid = nameLength > 3 && nameLength < 50;
     notNumbs = containsNums(nameValue) == false;
-    if (nameLengthValid && notNumbs) {
+    onlyLetters = isNotLetter(nameValue) == undefined;
+    if (nameLengthValid && notNumbs && onlyLetters) {
       showValid(inputName);
       return true;
     } else {
-      showInvalid(inputName);
+      showInvalid(inputName, "Between 3 & 50 chars. Only letters");
     }
   }
 
@@ -50,7 +67,7 @@ window.onload = function () {
       showValid(inputmessage);
       return true;
     } else {
-      showInvalid(inputmessage);
+      showInvalid(inputmessage, "More than 3 chars");
     }
   }
 
@@ -59,7 +76,7 @@ window.onload = function () {
       showValid(inputEmail);
       return true;
     } else {
-      showInvalid(inputEmail);
+      showInvalid(inputEmail, "Valid email required");
     }
   }
 
@@ -71,13 +88,8 @@ window.onload = function () {
       showValid(inputArea);
       return true;
     } else {
-      showInvalid(inputArea);
+      showInvalid(inputArea, "Pick an area");
     }
-  }
-
-  function normalizeInput(e) {
-    e.target.classList.remove("invalidValue");
-    alertError.innerText = "";
   }
 
   submit.onclick = function (e) {

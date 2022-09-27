@@ -4,9 +4,10 @@ window.onload = function () {
   var inputEmail = document.getElementById("email");
   var inputPass = document.getElementById("pass");
   var submit = document.getElementById("submit");
+  var divPass = document.getElementById("box-pass");
   var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-  var alertError = document.createElement("h3");
-  alertError.classList.add("redAlert");
+  var invalidAlert = document.createElement("p");
+  var node = document.createTextNode("");
 
   function containsNums(string) {
     var nums = "0123456789";
@@ -30,36 +31,47 @@ window.onload = function () {
     return false;
   }
 
+  function showValid(field) {
+    field.classList.add("validValue");
+  }
+
+  function showInvalid(field, msg) {
+    field.classList.add("invalidValue");
+    node.textContent = msg;
+    invalidAlert.appendChild(node);
+    invalidAlert.classList.add("error-msg");
+    field.parentNode.insertAdjacentElement("beforebegin", invalidAlert);
+    console.log(invalidAlert);
+  }
+
+  function normalizeInput(e) {
+    e.target.classList.remove("invalidValue");
+    invalidAlert.remove();
+  }
+
+  function validateEmail() {
+    if (emailExpression.test(inputEmail.value)) {
+      showValid(inputEmail);
+      return true;
+    } else {
+      showInvalid(inputEmail, "Valid E-mail required");
+    }
+  }
+
   function validatePass() {
     var passLength = inputPass.value.length;
     var passValue = inputPass.value;
     var upperInPass = upperCaseInString(passValue);
     var numInPass = containsNums(passValue);
     if (passLength >= 8 && passLength <= 30 && numInPass && upperInPass) {
-      inputPass.classList.add("validValue");
+      showValid(inputPass);
       return true;
     } else {
-      inputPass.classList.add("invalidValue");
-      alertError.innerText = "Incorrect username or password";
-      main.appendChild(alertError);
-      return false;
+      showInvalid(
+        inputPass,
+        "More than 3 chars,1 number and Uppercase required"
+      );
     }
-  }
-
-  function validateEmail() {
-    if (emailExpression.test(inputEmail.value)) {
-      inputEmail.classList.add("validValue");
-      return true;
-    } else {
-      inputEmail.classList.add("invalidValue");
-      alertError.innerText = "Incorrect username or password";
-      main.appendChild(alertError);
-    }
-  }
-
-  function normalizeInput(e) {
-    e.target.classList.remove("invalidValue");
-    alertError.innerText = "";
   }
 
   submit.onclick = function (e) {
@@ -67,9 +79,9 @@ window.onload = function () {
     var mailIsOk = validateEmail(inputEmail.value);
     var passIsOk = validatePass(inputPass.value);
     if (passIsOk && mailIsOk) {
-      alert(
-        "Email: " + inputEmail.value + " " + "Password: " + inputPass.value
-      );
+      alert(`
+      Email: ${inputEmail.value}
+      Password: ${inputPass.value}`);
     } else {
       alert("Incorrect Username or Password");
     }

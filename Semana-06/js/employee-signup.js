@@ -14,8 +14,9 @@ window.onload = function () {
   var inputRepeatPass = document.getElementById("repeatPass");
   var submit = document.getElementById("submit");
   var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-  var alertError = document.createElement("h3");
-  alertError.classList.add("redAlert");
+  var invalidAlert = document.createElement("p");
+  var node = document.createTextNode("");
+  invalidAlert.classList.add("error-msg");
 
   function containsNums(string) {
     var nums = "0123456789";
@@ -57,25 +58,30 @@ window.onload = function () {
     }
     return false;
   }
-  //aca falta agregarle algo porque si es un simbolo no funciona, si es un numero no importa
-  //porque esta la otra funcion de numeros
 
-  function isLetters(word) {
-    if (word.toUpperCase() !== word.toLowerCase()) {
-      return true;
-    } else {
-      return false;
+  function isNotLetter(string) {
+    for (var i = 0; i < string.length; i++) {
+      char = string[i];
+      if (char.toUpperCase() == char.toLowerCase()) {
+        return true;
+      }
     }
-  }
-
-  function showInvalid(field) {
-    field.classList.add("invalidValue");
-    alertError.innerText = "Incorrect username or password";
-    form.appendChild(alertError);
   }
 
   function showValid(field) {
     field.classList.add("validValue");
+  }
+
+  function showInvalid(field, msg) {
+    field.classList.add("invalidValue");
+    node.textContent = msg;
+    invalidAlert.appendChild(node);
+    field.parentNode.insertAdjacentElement("beforebegin", invalidAlert);
+  }
+
+  function normalizeInput(e) {
+    e.target.classList.remove("invalidValue");
+    invalidAlert.remove();
   }
 
   function validateFirstName() {
@@ -83,11 +89,14 @@ window.onload = function () {
     nameValue = inputFirstName.value;
     nameLengthValid = nameLength > 3 && nameLength < 50;
     notNumbs = containsNums(nameValue) == false;
-    if (nameLengthValid && notNumbs) {
+    onlyLetters = isNotLetter(nameValue) == undefined;
+    if (nameLengthValid && notNumbs && onlyLetters) {
       showValid(inputFirstName);
+      correctValues.push("First name valid");
+      console.log(correctValues);
       return true;
     } else {
-      showInvalid(inputFirstName);
+      showInvalid(inputFirstName, "Between 3 & 50 chars. Only letters");
     }
   }
 
@@ -96,11 +105,12 @@ window.onload = function () {
     lastNameValue = inputLastName.value;
     lastNameLengthValid = lastNameLength > 3 && lastNameLength < 50;
     notNumbs = containsNums(lastNameValue) == false;
-    if (lastNameLengthValid && notNumbs) {
+    onlyLetter = isNotLetter(lastNameValue) == undefined;
+    if (lastNameLengthValid && notNumbs && onlyLetter) {
       showValid(inputLastName);
       return true;
     } else {
-      showInvalid(inputLastName);
+      showInvalid(inputLastName, "Between 3 & 50 chars. Only letters");
     }
   }
 
@@ -113,7 +123,7 @@ window.onload = function () {
       showValid(inputDNI);
       return true;
     } else {
-      showInvalid(inputDNI);
+      showInvalid(inputDNI, "8 or 9 numbers");
     }
   }
 
@@ -126,7 +136,7 @@ window.onload = function () {
       showValid(inputPhone);
       return true;
     } else {
-      showInvalid(inputPhone);
+      showInvalid(inputPhone, "10 numbers");
     }
   }
 
@@ -138,7 +148,7 @@ window.onload = function () {
       showValid(inputCity);
       return true;
     } else {
-      showInvalid(inputCity);
+      showInvalid(inputCity, "More than 3 chars. Alphanumeric allowed");
     }
   }
 
@@ -152,7 +162,7 @@ window.onload = function () {
       showValid(inputAddress);
       return true;
     } else {
-      showInvalid(inputAddress);
+      showInvalid(inputAddress, "More than 5 chars(included nums and space)");
     }
   }
 
@@ -164,7 +174,13 @@ window.onload = function () {
       showValid(inputBirthDate);
       return true;
     } else {
-      showInvalid(inputBirthDate);
+      inputBirthDate.classList.add("invalidValue");
+      node.textContent = "Date required";
+      invalidAlert.appendChild(node);
+      inputBirthDate.parentNode.insertAdjacentElement(
+        "afterbegin",
+        invalidAlert
+      );
     }
   }
 
@@ -177,7 +193,7 @@ window.onload = function () {
       showValid(inputPostalCode);
       return true;
     } else {
-      showInvalid(inputPostalCode);
+      showInvalid(inputPostalCode, "Between 4 & 5 chars. Only numbers");
     }
   }
 
@@ -186,7 +202,7 @@ window.onload = function () {
       showValid(inputEmail);
       return true;
     } else {
-      showInvalid(inputEmail);
+      showInvalid(inputEmail, "Valid E-mail required");
     }
   }
 
@@ -199,7 +215,10 @@ window.onload = function () {
       showValid(inputPass);
       return true;
     } else {
-      showInvalid(inputPass);
+      showInvalid(
+        inputPass,
+        "More than 3 chars,1 number and Uppercase required"
+      );
     }
   }
 
@@ -213,16 +232,28 @@ window.onload = function () {
         showValid(inputRepeatPass);
         return true;
       } else {
-        showInvalid(inputRepeatPass);
+        showInvalid(inputRepeatPass, "Enter the same value as in password");
       }
     } else {
-      showInvalid(inputRepeatPass);
+      var rpassLength = inputRepeatPass.value.length;
+      var rpassValue = inputRepeatPass.value;
+      var rupperInPass = upperCaseInString(rpassValue);
+      var rnumInPass = containsNums(rpassValue);
+      if (rpassLength >= 8 && rpassLength <= 30 && rnumInPass && rupperInPass) {
+        showValid(inputRepeatPass);
+        return true;
+      } else {
+        showInvalid(
+          inputRepeatPass,
+          "More than 3 chars,1 number and Uppercase required"
+        );
+      }
     }
   }
 
   function normalizeInput(e) {
     e.target.classList.remove("invalidValue");
-    alertError.innerText = "";
+    invalidAlert.remove();
   }
 
   submit.onclick = function (e) {
@@ -251,44 +282,21 @@ window.onload = function () {
       poscodeOk &&
       repeatOk
     ) {
-      alert(
-        "First Name : " +
-          inputFirstName.value +
-          "    " +
-          "LastName: " +
-          inputLastName.value +
-          "    " +
-          "Dni: " +
-          inputDNI.value +
-          "    " +
-          "Phone: " +
-          inputPhone.value +
-          "    " +
-          "Birth date: " +
-          inputBirthDate.value +
-          "    " +
-          "City: " +
-          inputCity.value +
-          "    " +
-          "Address: " +
-          inputAddress.value +
-          "    " +
-          "Postal code: " +
-          inputPostalCode.value +
-          "    " +
-          "Email: " +
-          inputEmail.value +
-          "    " +
-          "Password: " +
-          inputPass.value +
-          "    " +
-          "Confirm Password: " +
-          inputRepeatPass.value
-      );
+      alert(`
+  First Name: ${inputFirstName.value}
+  LastName: ${inputLastName.value}
+  Dni: ${inputDNI.value}
+  Phone: ${inputPhone.value}
+  Birth date: ${inputBirthDate.value}
+  City: ${inputCity.value}
+  Address: ${inputAddress.value}
+  Postal code: ${inputPostalCode.value}
+  Email: ${inputEmail.value}
+  Password: ${inputPass.value}
+  Confirm Password: ${inputRepeatPass.value}`);
     } else {
       alert("Incorrect values");
     }
-    ("");
   };
 
   inputFirstName.addEventListener("blur", validateFirstName);
