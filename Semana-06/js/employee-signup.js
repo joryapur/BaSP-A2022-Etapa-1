@@ -1,5 +1,4 @@
 window.onload = function () {
-  var main = document.getElementById("main");
   var form = document.getElementById("form");
   var inputFirstName = document.getElementById("firstName");
   var inputLastName = document.getElementById("lastName");
@@ -13,6 +12,7 @@ window.onload = function () {
   var inputPass = document.getElementById("pass");
   var inputRepeatPass = document.getElementById("repeatPass");
   var submit = document.getElementById("submit");
+
   var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
   var invalidAlert = document.createElement("p");
   var node = document.createTextNode("");
@@ -29,7 +29,7 @@ window.onload = function () {
   }
 
   function isNumber(val) {
-    valOk = val * 3;
+    var valOk = val * 3;
     if (valOk) {
       return true;
     } else {
@@ -92,8 +92,6 @@ window.onload = function () {
     onlyLetters = isNotLetter(nameValue) == undefined;
     if (nameLengthValid && notNumbs && onlyLetters) {
       showValid(inputFirstName);
-      correctValues.push("First name valid");
-      console.log(correctValues);
       return true;
     } else {
       showInvalid(inputFirstName, "Between 3 & 50 chars. Only letters");
@@ -157,12 +155,15 @@ window.onload = function () {
     addressValue = inputAddress.value;
     addressLengthValid = addressLength > 5;
     numInAddress = containsNums(addressValue);
-    addresSpace = spaceInString(addressValue);
-    if (addressLengthValid && numInAddress && addresSpace) {
+    addressSpace = spaceInString(addressValue);
+    if (addressLengthValid && numInAddress && addressSpace) {
       showValid(inputAddress);
       return true;
     } else {
-      showInvalid(inputAddress, "More than 5 chars(included nums and space)");
+      showInvalid(
+        inputAddress,
+        "More than 5 chars(included numbers and space)"
+      );
     }
   }
 
@@ -226,7 +227,6 @@ window.onload = function () {
     var passOk = validatePass() == true;
     var pass1 = inputPass.value;
     var passRepeat = inputRepeatPass.value;
-    console.log(passRepeat);
     if (passOk) {
       if (pass1 === passRepeat) {
         showValid(inputRepeatPass);

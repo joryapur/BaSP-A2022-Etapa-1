@@ -41,7 +41,6 @@ window.onload = function () {
     invalidAlert.appendChild(node);
     invalidAlert.classList.add("error-msg");
     field.parentNode.insertAdjacentElement("beforebegin", invalidAlert);
-    console.log(invalidAlert);
   }
 
   function normalizeInput(e) {
