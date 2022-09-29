@@ -26,9 +26,13 @@ Exercises to practice JavaScript.
 
 I am adding validations to the forms with javaScript
 
+## Week 07
+
+Through an HTTP request with Fetch now I am sending the data of the forms to a server
+
 ## Github-pages
 
-**Landing page** https://joryapur.github.io/BaSP-A2022-Etapa-1/Semana-06/views/index.html
+**Landing page** https://joryapur.github.io/BaSP-A2022-Etapa-1/Semana-07/views/index.html
 
 ## Authors
 

@@ -1,0 +1,42 @@
+.header {
+  display: flex;
+  padding-bottom: 0.3rem;
+  padding-top: 0;
+}
+
+.btn-header {
+  background: none;
+  border: none;
+  margin-right: 1rem;
+}
+
+.header h1 {
+  padding-top: 2rem;
+  padding-bottom: 0.2rem;
+  margin-right: 0.9rem;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+}
+
+.header div {
+  display: flex;
+  flex-direction: column;
+}
+.header h2 {
+  align-self: flex-end;
+  padding-bottom: 0.4rem;
+  font-size: 0.8rem;
+}
+
+@media (min-width: 480px) {
+  .header div {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1024px) {
+  .btn-header {
+    display: none;
+  }
+}

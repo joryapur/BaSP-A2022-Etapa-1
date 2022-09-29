@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/login.css" />
+    <script src="../js/login.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Trackgenix</h1>
+    </header>
+    <main id="main">
+      <a
+        href="https://joryapur.github.io/BaSP-A2022-Etapa-1/Semana-06/views/index.html"
+        class="link-home"
+        >Home</a
+      >
+      <div class="container-login">
+        <h2>Log In</h2>
+        <form id="form">
+          <div class="form-input" id="box-email">
+            <img src="../img/form-email.png" alt="" />
+            <input
+              type="text"
+              placeholder="E-mail"
+              class="inputBox"
+              id="email"
+              required
+            />
+          </div>
+          <div class="form-input" id="box-pass">
+            <img src="../img/form-pass.png" alt="" />
+            <input
+              type="password"
+              placeholder="Password"
+              class="inputBox"
+              id="pass"
+              required
+            />
+          </div>
+          <div class="form-remember">
+            <input type="checkbox" name="" id="checkbox" checked />
+            <label for="checkbox">Remember me</label>
+          </div>
+          <button type="submit" id="submit">Login</button>
+        </form>
+        <a href="">Forgot password?</a>
+      </div>
+    </main>
+  </body>
+</html>
