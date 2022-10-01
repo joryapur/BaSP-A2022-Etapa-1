@@ -18,6 +18,44 @@ window.onload = function () {
   var node = document.createTextNode("");
   invalidAlert.classList.add("error-msg");
 
+  function fillWithSaved() {
+    if (localStorage.getItem("Email")) {
+      inputEmail.value = localStorage.getItem("Email");
+    }
+    if (localStorage.getItem("Pass")) {
+      inputPass.value = localStorage.getItem("Pass");
+    }
+    if (localStorage.getItem("Address")) {
+      inputAddress.value = localStorage.getItem("Address");
+    }
+    if (localStorage.getItem("City")) {
+      inputCity.value = localStorage.getItem("City");
+    }
+    if (localStorage.getItem("Date of birth")) {
+      inputBirthDate.value = localStorage.getItem("Date of birth");
+    }
+    if (localStorage.getItem("DNI")) {
+      inputDNI.value = localStorage.getItem("DNI");
+    }
+    if (localStorage.getItem("First Name")) {
+      inputFirstName.value = localStorage.getItem("First Name");
+    }
+    if (localStorage.getItem("Last Name")) {
+      inputLastName.value = localStorage.getItem("Last Name");
+    }
+    if (localStorage.getItem("Phone")) {
+      inputPhone.value = localStorage.getItem("Phone");
+    }
+    if (localStorage.getItem("Postal code")) {
+      inputPostalCode.value = localStorage.getItem("Postal code");
+    }
+    if (localStorage.getItem("Confirm Password")) {
+      inputRepeatPass.value = localStorage.getItem("Confirm Password");
+    }
+  }
+
+  fillWithSaved();
+
   function containsNums(string) {
     var nums = "0123456789";
     for (var i = 0; i < string.length; i++) {
@@ -258,42 +296,83 @@ window.onload = function () {
 
   submit.onclick = function (e) {
     e.preventDefault();
-    nameOk = validateFirstName(inputFirstName.value);
-    lastOk = validateLastName(inputLastName.value);
-    dniOk = validateDNI(inputDNI);
-    phoneOk = validatePhone(inputPhone);
-    birthOk = validateBirthDate(inputBirthDate);
-    cityOk = validateCity(inputCity);
-    addressOk = validateAddress(inputAddress);
-    poscodeOk = validatePostalCode(inputPostalCode);
-    repeatOk = validateRepeat(inputRepeatPass);
-    mailIsOk = validateEmail(inputEmail.value);
-    passIsOk = validatePass(inputPass.value);
     if (
-      passIsOk &&
-      mailIsOk &&
-      nameOk &&
-      lastOk &&
-      dniOk &&
-      phoneOk &&
-      birthOk &&
-      cityOk &&
-      addressOk &&
-      poscodeOk &&
-      repeatOk
+      validateFirstName(inputFirstName.value) &&
+      validateLastName(inputLastName.value) &&
+      validateDNI(inputDNI) &&
+      validatePhone(inputPhone) &&
+      validateBirthDate(inputBirthDate) &&
+      validateCity(inputCity) &&
+      validateAddress(inputAddress) &&
+      validatePostalCode(inputPostalCode) &&
+      validateRepeat(inputRepeatPass) &&
+      validateEmail(inputEmail.value) &&
+      validatePass(inputPass.value)
     ) {
-      alert(`
-  First Name: ${inputFirstName.value}
-  LastName: ${inputLastName.value}
-  Dni: ${inputDNI.value}
-  Phone: ${inputPhone.value}
-  Birth date: ${inputBirthDate.value}
-  City: ${inputCity.value}
-  Address: ${inputAddress.value}
-  Postal code: ${inputPostalCode.value}
-  Email: ${inputEmail.value}
-  Password: ${inputPass.value}
-  Confirm Password: ${inputRepeatPass.value}`);
+      var infoUser = {
+        FirstName: inputFirstName.value,
+        LastName: inputLastName.value,
+        Dni: inputDNI.value,
+        Phone: inputPhone.value,
+        BirthDate: inputBirthDate.value,
+        City: inputCity.value,
+        Address: inputAddress.value,
+        PostalCode: inputPostalCode.value,
+        Email: inputEmail.value,
+        Password: inputPass.value,
+      };
+      var correctDate =
+        birthDateValue.substring(5, 7) +
+        "/" +
+        birthDateValue.substring(8) +
+        "/" +
+        birthDateValue.substring(0, 4);
+      fetch(
+        "https://basp-m2022-api-rest-server.herokuapp.com/signup/?email=" +
+          inputEmail.value +
+          "&password=" +
+          inputPass.value +
+          "&name=" +
+          inputFirstName.value +
+          "&lastName=" +
+          inputLastName.value +
+          "&dni=" +
+          inputDNI.value +
+          "&dob=" +
+          correctDate +
+          "&phone=" +
+          inputPhone.value +
+          "&address=" +
+          inputAddress.value +
+          "&zip=" +
+          inputPostalCode.value +
+          "&city=" +
+          inputCity
+      )
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (response) {
+          alert(
+            response.msg +
+              "     This data was sent:   " +
+              JSON.stringify(infoUser, null, 4)
+          );
+          localStorage.setItem("Email", inputEmail.value),
+            localStorage.setItem("Pass", inputPass.value),
+            localStorage.setItem("First Name", inputFirstName.value),
+            localStorage.setItem("Last Name", inputLastName.value),
+            localStorage.setItem("DNI", inputDNI.value),
+            localStorage.setItem("Date of birth", correctDate),
+            localStorage.setItem("Phone", inputPhone.value),
+            localStorage.setItem("Address", inputAddress.value),
+            localStorage.setItem("Postal code", inputPostalCode.value),
+            localStorage.setItem("City", inputCity.value),
+            localStorage.setItem("Confirm Password", inputRepeatPass.value);
+        })
+        .catch(function (err) {
+          alert(err);
+        });
     } else {
       alert("Incorrect values");
     }

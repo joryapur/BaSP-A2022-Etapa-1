@@ -1,5 +1,4 @@
 window.onload = function () {
-  var main = document.getElementById("main");
   var form = document.getElementById("form");
   var inputEmail = document.getElementById("email");
   var inputPass = document.getElementById("pass");
@@ -78,11 +77,21 @@ window.onload = function () {
     var mailIsOk = validateEmail(inputEmail.value);
     var passIsOk = validatePass(inputPass.value);
     if (passIsOk && mailIsOk) {
-      alert(`
-      Email: ${inputEmail.value}
-      Password: ${inputPass.value}`);
-    } else {
-      alert("Incorrect Username or Password");
+      fetch(
+        "https://basp-m2022-api-rest-server.herokuapp.com/login?email=" +
+          inputEmail.value +
+          "&password=" +
+          inputPass.value
+      )
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (response) {
+          alert("Successfully login:   " + response.msg);
+        })
+        .catch(function (err) {
+          alert(err);
+        });
     }
   };
 
