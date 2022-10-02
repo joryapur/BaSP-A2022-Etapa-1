@@ -2,10 +2,10 @@ window.onload = function () {
   var form = document.getElementById("form");
   var inputEmail = document.getElementById("email");
   var inputPass = document.getElementById("pass");
+  var passwordError = document.getElementById("passwordError");
+  var emailError = document.getElementById("emailError");
   var submit = document.getElementById("submit");
   var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-  var invalidAlert = document.createElement("p");
-  var node = document.createTextNode("");
 
   function containsNums(string) {
     var nums = "0123456789";
@@ -33,17 +33,18 @@ window.onload = function () {
     field.classList.add("validValue");
   }
 
-  function showInvalid(field, msg) {
-    field.classList.add("invalidValue");
-    node.textContent = msg;
-    invalidAlert.appendChild(node);
-    invalidAlert.classList.add("error-msg");
-    field.parentNode.insertAdjacentElement("beforebegin", invalidAlert);
+  function showInvalid(input, p, msg) {
+    p.innerHTML = msg;
+    input.classList.add("invalidValue");
   }
 
   function normalizeInput(e) {
     e.target.classList.remove("invalidValue");
-    invalidAlert.remove();
+    if (e.target == inputEmail) {
+      emailError.innerHTML = "";
+    } else {
+      passwordError.innerHTML = "";
+    }
   }
 
   function validateEmail() {
@@ -51,7 +52,7 @@ window.onload = function () {
       showValid(inputEmail);
       return true;
     } else {
-      showInvalid(inputEmail, "Valid E-mail required");
+      showInvalid(inputEmail, emailError, "Valid E-mail required");
     }
   }
 
@@ -66,6 +67,7 @@ window.onload = function () {
     } else {
       showInvalid(
         inputPass,
+        passwordError,
         "More than 3 chars,1 number and Uppercase required"
       );
     }
@@ -95,10 +97,20 @@ window.onload = function () {
         .catch(function (err) {
           alert(err);
         });
+    } else {
+      var msg = "";
+      if (emailError.innerHTML.length > 4) {
+        msg += "Incorrect Email";
+      }
+      if (passwordError.innerHTML.length > 4) {
+        msg += " Incorrect password";
+      }
+      alert(msg);
     }
   };
 
   inputEmail.addEventListener("blur", validateEmail);
   inputPass.addEventListener("blur", validatePass);
-  form.addEventListener("focusin", normalizeInput);
+  inputEmail.addEventListener("focus", normalizeInput);
+  inputPass.addEventListener("focus", normalizeInput);
 };

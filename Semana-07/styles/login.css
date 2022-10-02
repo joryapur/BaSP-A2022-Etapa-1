@@ -88,13 +88,15 @@ form button:hover {
 }
 
 .inputBox {
-  width: 100%;
+  width: 85%;
   background: transparent;
   border: transparent;
 }
 
 .form-input {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   border-bottom: 1px solid #373867;
 }
 
@@ -116,6 +118,7 @@ form button:hover {
 .error-msg {
   color: red;
   font-size: 0.7rem;
+  width: 90%;
 }
 
 @media (min-width: 750px) {
