@@ -3,7 +3,6 @@ window.onload = function () {
   var inputEmail = document.getElementById("email");
   var inputPass = document.getElementById("pass");
   var submit = document.getElementById("submit");
-  var divPass = document.getElementById("box-pass");
   var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
   var invalidAlert = document.createElement("p");
   var node = document.createTextNode("");
@@ -87,7 +86,11 @@ window.onload = function () {
           return response.json();
         })
         .then(function (response) {
-          alert("Successfully login:   " + response.msg);
+          if (response.success == true) {
+            alert("Successfully login:   " + response.msg);
+          } else {
+            throw new Error(response.msg);
+          }
         })
         .catch(function (err) {
           alert(err);
