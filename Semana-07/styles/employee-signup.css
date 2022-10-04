@@ -34,11 +34,9 @@ h2 {
   font-size: 1.9rem;
   text-align: center;
 }
-
-/* .container-login {
-  width: 90%;
-  margin: auto;
-} */
+header {
+  background-color: #373867;
+}
 
 form {
   display: flex;
