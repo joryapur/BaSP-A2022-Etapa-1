@@ -6,53 +6,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/reset.css" />
     <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/aside.css" />
     <link rel="stylesheet" href="../styles/login.css" />
     <script src="../js/login.js"></script>
     <title>Document</title>
   </head>
   <body>
-    <header>
-      <h1>Trackgenix</h1>
-    </header>
-    <main id="main">
-      <a
-        href="https://joryapur.github.io/BaSP-A2022-Etapa-1/Semana-06/views/index.html"
-        class="link-home"
-        >Home</a
-      >
-      <div class="container-login">
-        <h2>Log In</h2>
-        <form id="form">
-          <div class="form-input" id="box-email">
-            <p class="error-msg" id="emailError"></p>
-            <img src="../img/form-email.png" alt="" />
-            <input
-              type="text"
-              placeholder="E-mail"
-              class="inputBox"
-              id="email"
-              required
-            />
-          </div>
-          <div class="form-input" id="box-pass">
-            <p class="error-msg" id="passwordError"></p>
-            <img src="../img/form-pass.png" alt="" />
-            <input
-              type="password"
-              placeholder="Password"
-              class="inputBox"
-              id="pass"
-              required
-            />
-          </div>
-          <div class="form-remember">
-            <input type="checkbox" name="" id="checkbox" checked />
-            <label for="checkbox">Remember me</label>
-          </div>
-          <button type="submit" id="submit">Login</button>
-        </form>
-        <a href="">Forgot password?</a>
-      </div>
-    </main>
+    <div class="container-aside">
+      <aside>
+        <section class="container-search">
+          <input type="search" placeholder=" Search" name="search" />
+          <button>
+            <img src="../img/icon-lupa.png" alt="magnifying glass image" />
+          </button>
+        </section>
+        <section class="sidebar-links">
+          <ul>
+            <li>
+              <a
+                href="https://joryapur.github.io/BaSP-A2022-Etapa-1/Semana-07/views/index.html"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://joryapur.github.io/BaSP-A2022-Etapa-1/Semana-07/views/employee-signup.html"
+                >Sign Up</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://joryapur.github.io/BaSP-A2022-Etapa-1/Semana-07/views/login.html"
+                >Log In</a
+              >
+            </li>
+          </ul>
+        </section>
+        <section class="sidebar-contact">
+          <h3>Get in touch</h3>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+          <address>
+            <div>
+              <img
+                src="../img/icon-adress.png"
+                alt="Icon Adress"
+                class="icon-adress"
+              />1245 Svurivne, Baudnd.
+            </div>
+            <div>
+              <img src="../img/icon-email.png" alt="Icon Email" />
+              <a href="mailto:dvdgrfssfsf@correo.com">dvdgrfssfsf@correo.com</a>
+            </div>
+            <div>
+              <img
+                src="../img/icon-telephone.png"
+                alt="Icon Telephone"
+              />985685956
+            </div>
+          </address>
+        </section>
+      </aside>
+    </div>
+    <div class="main-content">
+      <header>
+        <h1>Trackgenix</h1>
+      </header>
+      <main id="main">
+        <div class="container-login">
+          <h2>Log In</h2>
+          <form id="form">
+            <div class="form-input" id="box-email">
+              <p class="error-msg" id="emailError"></p>
+              <img src="../img/form-email.png" alt="" />
+              <input
+                type="text"
+                placeholder="E-mail"
+                class="inputBox"
+                id="email"
+                required
+              />
+            </div>
+            <div class="form-input" id="box-pass">
+              <p class="error-msg" id="passwordError"></p>
+              <img src="../img/form-pass.png" alt="" />
+              <input
+                type="password"
+                placeholder="Password"
+                class="inputBox"
+                id="pass"
+                required
+              />
+            </div>
+            <div class="form-remember">
+              <input type="checkbox" name="" id="checkbox" checked />
+              <label for="checkbox">Remember me</label>
+            </div>
+            <button type="submit" id="submit">Login</button>
+          </form>
+          <a href="">Forgot password?</a>
+        </div>
+      </main>
+      -->
+    </div>
   </body>
 </html>

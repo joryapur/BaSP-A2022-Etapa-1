@@ -1,14 +1,6 @@
 body {
   background-color: white;
 }
-/* 
-h1 {
-  padding: 1rem;
-  text-align: center;
-  background-color: #373867;
-  font-size: 2.15rem;
-  color: white;
-} */
 
 h1 {
   padding-top: 1.6rem;
@@ -19,14 +11,13 @@ h1 {
   line-height: 2.5rem;
   width: 90%;
 }
-main {
-  color: #373867;
-}
+
 main {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 80vh;
+  color: #373867;
 }
 
 h2 {
@@ -88,16 +79,6 @@ form button:hover {
   font-size: 0.8rem;
   margin: auto;
 }
-/* 
-a {
-  display: block;
-  padding-top: 0.7rem;
-  font-size: 0.7rem;
-  text-decoration: none;
-  color: #373867;
-  transition: color 0.2s linear 0.1s;
-  text-align: center;
-} */
 
 .redAlert {
   color: red;

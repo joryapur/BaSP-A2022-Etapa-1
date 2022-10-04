@@ -1,5 +1,4 @@
 window.onload = function () {
-  var form = document.getElementById("form");
   var inputEmail = document.getElementById("email");
   var inputPass = document.getElementById("pass");
   var passwordError = document.getElementById("passwordError");

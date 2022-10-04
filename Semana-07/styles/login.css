@@ -1,7 +1,10 @@
 body {
-  flex-direction: column;
   background-color: white;
   color: #373867;
+}
+
+aside {
+  color: white;
 }
 
 h1 {
@@ -60,7 +63,6 @@ form {
 }
 
 a {
-  display: block;
   font-size: 0.7rem;
   text-decoration: none;
   color: #373867;

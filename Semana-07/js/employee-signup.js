@@ -265,13 +265,6 @@ window.onload = function () {
       return true;
     } else {
       showInvalid(inputBirthDate, birthDateError, "Date required");
-      // inputBirthDate.classList.add("invalidValue");
-      // node.textContent = "Date required";
-      // invalidAlert.appendChild(node);
-      // inputBirthDate.parentNode.insertAdjacentElement(
-      //   "afterbegin",
-      //   invalidAlert
-      // );
     }
   }
 
