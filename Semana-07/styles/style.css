@@ -3,7 +3,6 @@ html {
   font-size: 12px;
 }
 body {
-  display: flex;
   background-color: #373867;
   font-family: "Roboto", sans-serif;
   color: white;
@@ -33,6 +32,10 @@ body {
 @media (min-width: 1024px) {
   html {
     font-size: 19px;
+  }
+
+  body {
+    display: flex;
   }
 
   .main-content {

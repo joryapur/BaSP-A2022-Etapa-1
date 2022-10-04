@@ -6,164 +6,234 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/reset.css" />
     <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/aside.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/employee-signup.css" />
     <script src="../js/employee-signup.js"></script>
     <title>Document</title>
   </head>
   <body>
-    <header>
-      <h1>Trackgenix</h1>
-    </header>
-    <main id="main">
-      <a
-        href="https://joryapur.github.io/BaSP-A2022-Etapa-1/Semana-06/views/index.html"
-        class="link-home"
-        >Home</a
-      >
-      <div class="container-login">
-        <h2>Sign Up</h2>
-        <form id="form">
-          <div class="form-input">
-            <label for="firstName">First Name</label>
+    <div class="container-aside">
+      <aside>
+        <section class="container-search">
+          <input type="search" placeholder=" Search" name="search" />
+          <button>
+            <img src="../img/icon-lupa.png" alt="magnifying glass image" />
+          </button>
+        </section>
+        <section class="sidebar-links">
+          <ul>
+            <li>
+              <a
+                href="https://joryapur.github.io/BaSP-A2022-Etapa-1/Semana-07/views/index.html"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://joryapur.github.io/BaSP-A2022-Etapa-1/Semana-07/views/employee-signup.html"
+                >Sign Up</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://joryapur.github.io/BaSP-A2022-Etapa-1/Semana-07/views/login.html"
+                >Log In</a
+              >
+            </li>
+          </ul>
+        </section>
+        <section class="sidebar-contact">
+          <h3>Get in touch</h3>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+          <address>
             <div>
+              <img
+                src="../img/icon-adress.png"
+                alt="Icon Adress"
+                class="icon-adress"
+              />1245 Svurivne, Baudnd.
+            </div>
+            <div>
+              <img src="../img/icon-email.png" alt="Icon Email" />
+              <a href="mailto:dvdgrfssfsf@correo.com">dvdgrfssfsf@correo.com</a>
+            </div>
+            <div>
+              <img
+                src="../img/icon-telephone.png"
+                alt="Icon Telephone"
+              />985685956
+            </div>
+          </address>
+        </section>
+      </aside>
+    </div>
+    <div class="main-content">
+      <header>
+        <h1>Trackgenix</h1>
+      </header>
+      <main id="main">
+        <div class="container-login">
+          <h2>Sign Up</h2>
+          <form id="form">
+            <div class="form-input">
+              <p class="error-msg" id="firstNameError"></p>
+              <label for="firstName">First Name</label>
+              <div>
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  class="inputBox"
+                  id="firstName"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-input">
+              <p class="error-msg" id="lastNameError"></p>
+              <label for="lastName">Last Name</label>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  class="inputBox"
+                  id="lastName"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-input">
+              <p class="error-msg" id="dniError"></p>
+              <label for="dni">DNI</label>
+              <div>
+                <input
+                  type="text"
+                  placeholder="DNI"
+                  class="inputBox"
+                  id="dni"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-input">
+              <p class="error-msg" id="birthDateError"></p>
+              <label for="birthDate">Birth Date</label>
               <input
-                type="text"
-                placeholder="First Name"
+                type="date"
                 class="inputBox"
-                id="firstName"
+                id="birthDate"
+                placeholder="10/09/1994"
                 required
               />
             </div>
-          </div>
-          <div class="form-input">
-            <label for="lastName">Last Name</label>
-            <div>
-              <input
-                type="text"
-                placeholder="Last Name"
-                class="inputBox"
-                id="lastName"
-                required
-              />
+            <div class="form-input">
+              <p class="error-msg" id="phoneError"></p>
+              <label for="phoneNum">Phone</label>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Phone number"
+                  class="inputBox"
+                  id="phone"
+                  required
+                />
+              </div>
             </div>
-          </div>
-          <div class="form-input">
-            <label for="dni">DNI</label>
-            <div>
-              <input
-                type="text"
-                placeholder="DNI"
-                class="inputBox"
-                id="dni"
-                required
-              />
+            <div class="form-input">
+              <p class="error-msg" id="addressError"></p>
+              <label for="adress">Address</label>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Address"
+                  class="inputBox"
+                  id="address"
+                  required
+                />
+              </div>
             </div>
-          </div>
-          <div class="form-input">
-            <label for="birthDate">Birth Date</label>
-            <input
-              type="date"
-              class="inputBox"
-              id="birthDate"
-              placeholder="10/09/1994"
-              required
-            />
-          </div>
-          <div class="form-input">
-            <label for="phoneNum">Phone</label>
-            <div>
-              <input
-                type="text"
-                placeholder="Phone number"
-                class="inputBox"
-                id="phone"
-                required
-              />
+            <div class="form-input">
+              <p class="error-msg" id="cityError"></p>
+              <label for="city">City</label>
+              <div>
+                <input
+                  type="text"
+                  placeholder="City"
+                  class="inputBox"
+                  id="city"
+                  required
+                />
+              </div>
             </div>
-          </div>
-          <div class="form-input">
-            <label for="adress">Address</label>
-            <div>
-              <input
-                type="text"
-                placeholder="Address"
-                class="inputBox"
-                id="address"
-                required
-              />
+            <div class="form-input">
+              <p class="error-msg" id="zipError"></p>
+              <label for="postalCode">Postal code</label>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Postal code"
+                  class="inputBox"
+                  id="postalCode"
+                  required
+                />
+              </div>
             </div>
-          </div>
-          <div class="form-input">
-            <label for="city">City</label>
-            <div>
-              <input
-                type="text"
-                placeholder="City"
-                class="inputBox"
-                id="city"
-                required
-              />
+            <div class="form-input email-100">
+              <p class="error-msg" id="emailError"></p>
+              <img src="../img/form-email.png" alt="" />
+              <label for="email">Email</label>
+              <div>
+                <input
+                  type="text"
+                  placeholder="E-mail"
+                  class="inputBox"
+                  id="email"
+                  required
+                />
+              </div>
             </div>
-          </div>
-          <div class="form-input">
-            <label for="postalCode">Postal code</label>
-            <div>
-              <input
-                type="text"
-                placeholder="Postal code"
-                class="inputBox"
-                id="postalCode"
-                required
-              />
+            <div class="form-input">
+              <p class="error-msg" id="passwordError"></p>
+              <img src="../img/form-pass.png" alt="" />
+              <label for="pass">Password</label>
+              <div>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  class="inputBox"
+                  id="pass"
+                  required
+                />
+              </div>
             </div>
-          </div>
-          <div class="form-input email-100">
-            <img src="../img/form-email.png" alt="" />
-            <label for="email">Email</label>
-            <div>
-              <input
-                type="text"
-                placeholder="E-mail"
-                class="inputBox"
-                id="email"
-                required
-              />
+            <div class="form-input">
+              <p class="error-msg" id="confirmPasswordError"></p>
+              <img src="../img/form-pass.png" alt="" />
+              <label for="repeatPass">Repeat password</label>
+              <div>
+                <input
+                  type="password"
+                  placeholder="Repeat password"
+                  class="inputBox"
+                  id="repeatPass"
+                  required
+                />
+              </div>
             </div>
-          </div>
-          <div class="form-input">
-            <img src="../img/form-pass.png" alt="" />
-            <label for="pass">Password</label>
-            <div>
-              <input
-                type="password"
-                placeholder="Password"
-                class="inputBox"
-                id="pass"
-                required
-              />
-            </div>
-          </div>
-          <div class="form-input">
-            <img src="../img/form-pass.png" alt="" />
-            <label for="repeatPass">Repeat password</label>
-            <div>
-              <input
-                type="password"
-                placeholder="Repeat password"
-                class="inputBox"
-                id="repeatPass"
-                required
-              />
-            </div>
-          </div>
-          <button type="submit" id="submit">Create account</button>
-        </form>
-        <a
-          href="https://joryapur.github.io/BaSP-A2022-Etapa-1/Semana-06/views/login.html"
-          class="link-signIn"
-          >Do you already have an account? Sign In</a
-        >
-      </div>
-    </main>
+            <button type="submit" id="submit">Create account</button>
+          </form>
+          <a
+            href="https://joryapur.github.io/BaSP-A2022-Etapa-1/Semana-07/views/login.html"
+            class="link-signIn"
+            >Do you already have an account? Sign In</a
+          >
+        </div>
+      </main>
+    </div>
   </body>
 </html>
